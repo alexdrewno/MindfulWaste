@@ -1,0 +1,6 @@
+framework module Pods_MindfulWasteUITests {
+  umbrella header "Pods-MindfulWasteUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

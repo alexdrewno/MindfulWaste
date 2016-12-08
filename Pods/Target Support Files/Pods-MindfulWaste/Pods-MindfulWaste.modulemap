@@ -1,0 +1,6 @@
+framework module Pods_MindfulWaste {
+  umbrella header "Pods-MindfulWaste-umbrella.h"
+
+  export *
+  module * { export * }
+}

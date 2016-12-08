@@ -1,0 +1,716 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BC4F91BC60C493847D3714F /* Pods_MindfulWasteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55D4E938AE4606BAA698DC0 /* Pods_MindfulWasteUITests.framework */; };
+		3F77F42E1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
+		3F77F42F1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
+		3F77F4301DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
+		3FF422CD1DF7853E001D2874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CC1DF7853E001D2874 /* AppDelegate.swift */; };
+		3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CE1DF7853E001D2874 /* ViewController.swift */; };
+		3FF422D21DF7853E001D2874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF422D01DF7853E001D2874 /* Main.storyboard */; };
+		3FF422D41DF7853E001D2874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF422D31DF7853E001D2874 /* Assets.xcassets */; };
+		3FF422D71DF7853E001D2874 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF422D51DF7853E001D2874 /* LaunchScreen.storyboard */; };
+		3FF422E21DF7853E001D2874 /* MindfulWasteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422E11DF7853E001D2874 /* MindfulWasteTests.swift */; };
+		3FF422ED1DF7853E001D2874 /* MindfulWasteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422EC1DF7853E001D2874 /* MindfulWasteUITests.swift */; };
+		B27521B0EB6D07948AC19738 /* Pods_MindfulWaste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F16CB367FFF2D958C24AAE /* Pods_MindfulWaste.framework */; };
+		DC2CCEB9974A4E04CFE7589A /* Pods_MindfulWasteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B447B2BE47E3BAD88B07C2 /* Pods_MindfulWasteTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3FF422DE1DF7853E001D2874 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FF422C11DF7853D001D2874 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FF422C81DF7853D001D2874;
+			remoteInfo = MindfulWaste;
+		};
+		3FF422E91DF7853E001D2874 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FF422C11DF7853D001D2874 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FF422C81DF7853D001D2874;
+			remoteInfo = MindfulWaste;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00B447B2BE47E3BAD88B07C2 /* Pods_MindfulWasteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindfulWasteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D915108F249FCC14E432515 /* Pods-MindfulWaste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWaste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste.debug.xcconfig"; sourceTree = "<group>"; };
+		3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3FF422C91DF7853E001D2874 /* MindfulWaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindfulWaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FF422CC1DF7853E001D2874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3FF422CE1DF7853E001D2874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FF422D11DF7853E001D2874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3FF422D31DF7853E001D2874 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3FF422D61DF7853E001D2874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3FF422D81DF7853E001D2874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FF422DD1DF7853E001D2874 /* MindfulWasteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindfulWasteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FF422E11DF7853E001D2874 /* MindfulWasteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulWasteTests.swift; sourceTree = "<group>"; };
+		3FF422E31DF7853E001D2874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FF422E81DF7853E001D2874 /* MindfulWasteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindfulWasteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FF422EC1DF7853E001D2874 /* MindfulWasteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulWasteUITests.swift; sourceTree = "<group>"; };
+		3FF422EE1DF7853E001D2874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4098CA507494378DF3710A41 /* Pods-MindfulWasteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWasteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWasteTests/Pods-MindfulWasteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		40F16CB367FFF2D958C24AAE /* Pods_MindfulWaste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindfulWaste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		485471B5AE89AD167B65516F /* Pods-MindfulWasteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWasteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWasteUITests/Pods-MindfulWasteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		86BC002B4748BBB436553EB1 /* Pods-MindfulWaste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWaste.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste.release.xcconfig"; sourceTree = "<group>"; };
+		D005366AD6EB375E811E49F5 /* Pods-MindfulWasteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWasteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWasteTests/Pods-MindfulWasteTests.release.xcconfig"; sourceTree = "<group>"; };
+		DFBBE3FD9D43F4A4823D358B /* Pods-MindfulWasteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWasteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWasteUITests/Pods-MindfulWasteUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F55D4E938AE4606BAA698DC0 /* Pods_MindfulWasteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindfulWasteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FF422C61DF7853D001D2874 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B27521B0EB6D07948AC19738 /* Pods_MindfulWaste.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FF422DA1DF7853E001D2874 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2CCEB9974A4E04CFE7589A /* Pods_MindfulWasteTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FF422E51DF7853E001D2874 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BC4F91BC60C493847D3714F /* Pods_MindfulWasteUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FF422C01DF7853D001D2874 = {
+			isa = PBXGroup;
+			children = (
+				3FF422CB1DF7853E001D2874 /* MindfulWaste */,
+				3FF422E01DF7853E001D2874 /* MindfulWasteTests */,
+				3FF422CA1DF7853E001D2874 /* Products */,
+				3FF422EB1DF7853E001D2874 /* MindfulWasteUITests */,
+				53EC7F6970DE1ED8EA9FDAAD /* Pods */,
+				A8BC6AA220B58ADCF707252A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3FF422CA1DF7853E001D2874 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FF422C91DF7853E001D2874 /* MindfulWaste.app */,
+				3FF422DD1DF7853E001D2874 /* MindfulWasteTests.xctest */,
+				3FF422E81DF7853E001D2874 /* MindfulWasteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FF422CB1DF7853E001D2874 /* MindfulWaste */ = {
+			isa = PBXGroup;
+			children = (
+				3FF422CC1DF7853E001D2874 /* AppDelegate.swift */,
+				3FF422CE1DF7853E001D2874 /* ViewController.swift */,
+				3FF422D01DF7853E001D2874 /* Main.storyboard */,
+				3FF422D31DF7853E001D2874 /* Assets.xcassets */,
+				3FF422D51DF7853E001D2874 /* LaunchScreen.storyboard */,
+				3FF422D81DF7853E001D2874 /* Info.plist */,
+				3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */,
+			);
+			path = MindfulWaste;
+			sourceTree = "<group>";
+		};
+		3FF422E01DF7853E001D2874 /* MindfulWasteTests */ = {
+			isa = PBXGroup;
+			children = (
+				3FF422E11DF7853E001D2874 /* MindfulWasteTests.swift */,
+				3FF422E31DF7853E001D2874 /* Info.plist */,
+			);
+			path = MindfulWasteTests;
+			sourceTree = "<group>";
+		};
+		3FF422EB1DF7853E001D2874 /* MindfulWasteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3FF422EC1DF7853E001D2874 /* MindfulWasteUITests.swift */,
+				3FF422EE1DF7853E001D2874 /* Info.plist */,
+			);
+			path = MindfulWasteUITests;
+			sourceTree = "<group>";
+		};
+		53EC7F6970DE1ED8EA9FDAAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D915108F249FCC14E432515 /* Pods-MindfulWaste.debug.xcconfig */,
+				86BC002B4748BBB436553EB1 /* Pods-MindfulWaste.release.xcconfig */,
+				4098CA507494378DF3710A41 /* Pods-MindfulWasteTests.debug.xcconfig */,
+				D005366AD6EB375E811E49F5 /* Pods-MindfulWasteTests.release.xcconfig */,
+				DFBBE3FD9D43F4A4823D358B /* Pods-MindfulWasteUITests.debug.xcconfig */,
+				485471B5AE89AD167B65516F /* Pods-MindfulWasteUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A8BC6AA220B58ADCF707252A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40F16CB367FFF2D958C24AAE /* Pods_MindfulWaste.framework */,
+				00B447B2BE47E3BAD88B07C2 /* Pods_MindfulWasteTests.framework */,
+				F55D4E938AE4606BAA698DC0 /* Pods_MindfulWasteUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FF422C81DF7853D001D2874 /* MindfulWaste */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FF422F11DF7853E001D2874 /* Build configuration list for PBXNativeTarget "MindfulWaste" */;
+			buildPhases = (
+				7FE418110E6227DEC858DC89 /* [CP] Check Pods Manifest.lock */,
+				3FF422C51DF7853D001D2874 /* Sources */,
+				3FF422C61DF7853D001D2874 /* Frameworks */,
+				3FF422C71DF7853D001D2874 /* Resources */,
+				21AEA06AC73E1AAA2587821C /* [CP] Embed Pods Frameworks */,
+				4E7142FE4A13F6CBF107B4AC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MindfulWaste;
+			productName = MindfulWaste;
+			productReference = 3FF422C91DF7853E001D2874 /* MindfulWaste.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3FF422DC1DF7853E001D2874 /* MindfulWasteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FF422F41DF7853E001D2874 /* Build configuration list for PBXNativeTarget "MindfulWasteTests" */;
+			buildPhases = (
+				A39D49BFA6F424A33FA3335C /* [CP] Check Pods Manifest.lock */,
+				3FF422D91DF7853E001D2874 /* Sources */,
+				3FF422DA1DF7853E001D2874 /* Frameworks */,
+				3FF422DB1DF7853E001D2874 /* Resources */,
+				BC95B8468A0080E829AE3E96 /* [CP] Embed Pods Frameworks */,
+				29D7BCFB0BE034EAFC0CA9EA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FF422DF1DF7853E001D2874 /* PBXTargetDependency */,
+			);
+			name = MindfulWasteTests;
+			productName = MindfulWasteTests;
+			productReference = 3FF422DD1DF7853E001D2874 /* MindfulWasteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3FF422E71DF7853E001D2874 /* MindfulWasteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FF422F71DF7853E001D2874 /* Build configuration list for PBXNativeTarget "MindfulWasteUITests" */;
+			buildPhases = (
+				F16D9988494901752E8BCD6A /* [CP] Check Pods Manifest.lock */,
+				3FF422E41DF7853E001D2874 /* Sources */,
+				3FF422E51DF7853E001D2874 /* Frameworks */,
+				3FF422E61DF7853E001D2874 /* Resources */,
+				0246865FA8B570A28C26190A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FF422EA1DF7853E001D2874 /* PBXTargetDependency */,
+			);
+			name = MindfulWasteUITests;
+			productName = MindfulWasteUITests;
+			productReference = 3FF422E81DF7853E001D2874 /* MindfulWasteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FF422C11DF7853D001D2874 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = adrewno1;
+				TargetAttributes = {
+					3FF422C81DF7853D001D2874 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					3FF422DC1DF7853E001D2874 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3FF422C81DF7853D001D2874;
+					};
+					3FF422E71DF7853E001D2874 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3FF422C81DF7853D001D2874;
+					};
+				};
+			};
+			buildConfigurationList = 3FF422C41DF7853D001D2874 /* Build configuration list for PBXProject "MindfulWaste" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3FF422C01DF7853D001D2874;
+			productRefGroup = 3FF422CA1DF7853E001D2874 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FF422C81DF7853D001D2874 /* MindfulWaste */,
+				3FF422DC1DF7853E001D2874 /* MindfulWasteTests */,
+				3FF422E71DF7853E001D2874 /* MindfulWasteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FF422C71DF7853D001D2874 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF422D71DF7853E001D2874 /* LaunchScreen.storyboard in Resources */,
+				3F77F42E1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */,
+				3FF422D41DF7853E001D2874 /* Assets.xcassets in Resources */,
+				3FF422D21DF7853E001D2874 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FF422DB1DF7853E001D2874 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F77F42F1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FF422E61DF7853E001D2874 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F77F4301DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0246865FA8B570A28C26190A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWasteUITests/Pods-MindfulWasteUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21AEA06AC73E1AAA2587821C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29D7BCFB0BE034EAFC0CA9EA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWasteTests/Pods-MindfulWasteTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E7142FE4A13F6CBF107B4AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FE418110E6227DEC858DC89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A39D49BFA6F424A33FA3335C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BC95B8468A0080E829AE3E96 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWasteTests/Pods-MindfulWasteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F16D9988494901752E8BCD6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FF422C51DF7853D001D2874 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */,
+				3FF422CD1DF7853E001D2874 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FF422D91DF7853E001D2874 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF422E21DF7853E001D2874 /* MindfulWasteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FF422E41DF7853E001D2874 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF422ED1DF7853E001D2874 /* MindfulWasteUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3FF422DF1DF7853E001D2874 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FF422C81DF7853D001D2874 /* MindfulWaste */;
+			targetProxy = 3FF422DE1DF7853E001D2874 /* PBXContainerItemProxy */;
+		};
+		3FF422EA1DF7853E001D2874 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FF422C81DF7853D001D2874 /* MindfulWaste */;
+			targetProxy = 3FF422E91DF7853E001D2874 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3FF422D01DF7853E001D2874 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FF422D11DF7853E001D2874 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3FF422D51DF7853E001D2874 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FF422D61DF7853E001D2874 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FF422EF1DF7853E001D2874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3FF422F01DF7853E001D2874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FF422F21DF7853E001D2874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D915108F249FCC14E432515 /* Pods-MindfulWaste.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MindfulWaste/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.MindfulWaste.09204;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3FF422F31DF7853E001D2874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86BC002B4748BBB436553EB1 /* Pods-MindfulWaste.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MindfulWaste/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.MindfulWaste.09204;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3FF422F51DF7853E001D2874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4098CA507494378DF3710A41 /* Pods-MindfulWasteTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MindfulWasteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.MindfulWasteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MindfulWaste.app/MindfulWaste";
+			};
+			name = Debug;
+		};
+		3FF422F61DF7853E001D2874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D005366AD6EB375E811E49F5 /* Pods-MindfulWasteTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MindfulWasteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.MindfulWasteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MindfulWaste.app/MindfulWaste";
+			};
+			name = Release;
+		};
+		3FF422F81DF7853E001D2874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFBBE3FD9D43F4A4823D358B /* Pods-MindfulWasteUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MindfulWasteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.MindfulWasteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MindfulWaste;
+			};
+			name = Debug;
+		};
+		3FF422F91DF7853E001D2874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 485471B5AE89AD167B65516F /* Pods-MindfulWasteUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MindfulWasteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.MindfulWasteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MindfulWaste;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FF422C41DF7853D001D2874 /* Build configuration list for PBXProject "MindfulWaste" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FF422EF1DF7853E001D2874 /* Debug */,
+				3FF422F01DF7853E001D2874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FF422F11DF7853E001D2874 /* Build configuration list for PBXNativeTarget "MindfulWaste" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FF422F21DF7853E001D2874 /* Debug */,
+				3FF422F31DF7853E001D2874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FF422F41DF7853E001D2874 /* Build configuration list for PBXNativeTarget "MindfulWasteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FF422F51DF7853E001D2874 /* Debug */,
+				3FF422F61DF7853E001D2874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FF422F71DF7853E001D2874 /* Build configuration list for PBXNativeTarget "MindfulWasteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FF422F81DF7853E001D2874 /* Debug */,
+				3FF422F91DF7853E001D2874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FF422C11DF7853D001D2874 /* Project object */;
+}
