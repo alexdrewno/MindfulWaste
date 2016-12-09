@@ -246,15 +246,19 @@
 				TargetAttributes = {
 					3FF422C81DF7853D001D2874 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 5Q75DE3GYF;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					3FF422DC1DF7853E001D2874 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3FF422C81DF7853D001D2874;
 					};
 					3FF422E71DF7853E001D2874 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3FF422C81DF7853D001D2874;
 					};
@@ -592,6 +596,7 @@
 			baseConfigurationReference = 0D915108F249FCC14E432515 /* Pods-MindfulWaste.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5Q75DE3GYF;
 				INFOPLIST_FILE = MindfulWaste/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.MindfulWaste.09204;
@@ -605,6 +610,7 @@
 			baseConfigurationReference = 86BC002B4748BBB436553EB1 /* Pods-MindfulWaste.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5Q75DE3GYF;
 				INFOPLIST_FILE = MindfulWaste/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.MindfulWaste.09204;

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "72E24DF6D45A10585E236D61B03FF6F7DF9E7E84",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2DCEB6FA3DC10468966F31153A936299FCC2BB05" : 9223372036854775807,
+    "72E24DF6D45A10585E236D61B03FF6F7DF9E7E84" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A4D103A4-01E8-4B10-9E19-0C9144FC86FC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2DCEB6FA3DC10468966F31153A936299FCC2BB05" : "..",
+    "72E24DF6D45A10585E236D61B03FF6F7DF9E7E84" : "MindfulWaste\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MindfulWaste",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MindfulWaste.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kirbec\/College_Profile.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2DCEB6FA3DC10468966F31153A936299FCC2BB05"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kirbec\/MindfulWaste.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "72E24DF6D45A10585E236D61B03FF6F7DF9E7E84"
+    }
+  ]
+}

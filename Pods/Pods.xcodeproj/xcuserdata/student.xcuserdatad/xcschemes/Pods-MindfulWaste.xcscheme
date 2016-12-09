@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7FCCE4BDEC3E63E657AB6C267C7C64E3"
+               BlueprintIdentifier = "BDFA8E6C210F7B46AFC10A75D1F5E807"
                BuildableName = "Pods_MindfulWaste.framework"
                BlueprintName = "Pods-MindfulWaste"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FCCE4BDEC3E63E657AB6C267C7C64E3"
+            BlueprintIdentifier = "BDFA8E6C210F7B46AFC10A75D1F5E807"
             BuildableName = "Pods_MindfulWaste.framework"
             BlueprintName = "Pods-MindfulWaste"
             ReferencedContainer = "container:Pods.xcodeproj">
