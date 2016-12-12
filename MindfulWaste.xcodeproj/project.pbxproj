@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0BC4F91BC60C493847D3714F /* Pods_MindfulWasteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55D4E938AE4606BAA698DC0 /* Pods_MindfulWasteUITests.framework */; };
+		3F6E7E1E1DFB049700421F54 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E1D1DFB049700421F54 /* MenuController.swift */; };
+		3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */; };
 		3F77F42E1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
 		3F77F42F1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
 		3F77F4301DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		00B447B2BE47E3BAD88B07C2 /* Pods_MindfulWasteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindfulWasteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D915108F249FCC14E432515 /* Pods-MindfulWaste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWaste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste.debug.xcconfig"; sourceTree = "<group>"; };
+		3F6E7E1D1DFB049700421F54 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FF422C91DF7853E001D2874 /* MindfulWaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindfulWaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF422CC1DF7853E001D2874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				3FF422CC1DF7853E001D2874 /* AppDelegate.swift */,
 				3FF422CE1DF7853E001D2874 /* ViewController.swift */,
 				3FF422D01DF7853E001D2874 /* Main.storyboard */,
+				3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */,
+				3F6E7E1D1DFB049700421F54 /* MenuController.swift */,
 				3FF422D31DF7853E001D2874 /* Assets.xcassets */,
 				3FF422D51DF7853E001D2874 /* LaunchScreen.storyboard */,
 				3FF422D81DF7853E001D2874 /* Info.plist */,
@@ -442,7 +448,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */,
 				3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */,
+				3F6E7E1E1DFB049700421F54 /* MenuController.swift in Sources */,
 				3FF422CD1DF7853E001D2874 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

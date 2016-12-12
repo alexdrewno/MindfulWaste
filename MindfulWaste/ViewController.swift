@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import SideMenuController
 
-class ViewController: UIViewController {
+class ViewController: SideMenuController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        performSegue(withIdentifier: "showCenterController1", sender: nil)
+        performSegue(withIdentifier: "containsSideMenu", sender: nil)
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "menu")
+        SideMenuController.preferences.drawing.sidePanelPosition = .overCenterPanelLeft
+        SideMenuController.preferences.drawing.sidePanelWidth = 200
+        SideMenuController.preferences.drawing.centerPanelShadow = true
+        SideMenuController.preferences.animating.statusBarBehaviour = .showUnderlay
+        super.init(coder: aDecoder)
     }
 
 
