@@ -11,9 +11,6 @@
 		3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3295B41DFEFF1400612904 /* CustomUserCell.swift */; };
 		3F6E7E1E1DFB049700421F54 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E1D1DFB049700421F54 /* MenuController.swift */; };
 		3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */; };
-		3F77F42E1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
-		3F77F42F1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
-		3F77F4301DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
 		3FF422CD1DF7853E001D2874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CC1DF7853E001D2874 /* AppDelegate.swift */; };
 		3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CE1DF7853E001D2874 /* ViewController.swift */; };
 		3FF422D21DF7853E001D2874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF422D01DF7853E001D2874 /* Main.storyboard */; };
@@ -21,6 +18,9 @@
 		3FF422D71DF7853E001D2874 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF422D51DF7853E001D2874 /* LaunchScreen.storyboard */; };
 		3FF422E21DF7853E001D2874 /* MindfulWasteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422E11DF7853E001D2874 /* MindfulWasteTests.swift */; };
 		3FF422ED1DF7853E001D2874 /* MindfulWasteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422EC1DF7853E001D2874 /* MindfulWasteUITests.swift */; };
+		953B2AAE1E05EA3400649F55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */; };
+		953B2AAF1E05EA3400649F55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */; };
+		953B2AB01E05EA3400649F55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */; };
 		B27521B0EB6D07948AC19738 /* Pods_MindfulWaste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F16CB367FFF2D958C24AAE /* Pods_MindfulWaste.framework */; };
 		DC2CCEB9974A4E04CFE7589A /* Pods_MindfulWasteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B447B2BE47E3BAD88B07C2 /* Pods_MindfulWasteTests.framework */; };
 /* End PBXBuildFile section */
@@ -48,7 +48,6 @@
 		3F3295B41DFEFF1400612904 /* CustomUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUserCell.swift; sourceTree = "<group>"; };
 		3F6E7E1D1DFB049700421F54 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
-		3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F84E5FA1E01984500A0F81D /* MindfulWaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MindfulWaste.entitlements; sourceTree = "<group>"; };
 		3FF422C91DF7853E001D2874 /* MindfulWaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindfulWaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF422CC1DF7853E001D2874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		40F16CB367FFF2D958C24AAE /* Pods_MindfulWaste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindfulWaste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		485471B5AE89AD167B65516F /* Pods-MindfulWasteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWasteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWasteUITests/Pods-MindfulWasteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		86BC002B4748BBB436553EB1 /* Pods-MindfulWaste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWaste.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste.release.xcconfig"; sourceTree = "<group>"; };
+		953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D005366AD6EB375E811E49F5 /* Pods-MindfulWasteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWasteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWasteTests/Pods-MindfulWasteTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFBBE3FD9D43F4A4823D358B /* Pods-MindfulWasteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWasteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWasteUITests/Pods-MindfulWasteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F55D4E938AE4606BAA698DC0 /* Pods_MindfulWasteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindfulWasteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +135,7 @@
 				3FF422D31DF7853E001D2874 /* Assets.xcassets */,
 				3FF422D51DF7853E001D2874 /* LaunchScreen.storyboard */,
 				3FF422D81DF7853E001D2874 /* Info.plist */,
-				3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */,
+				953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */,
 			);
 			path = MindfulWaste;
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF422D71DF7853E001D2874 /* LaunchScreen.storyboard in Resources */,
-				3F77F42E1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */,
+				953B2AAE1E05EA3400649F55 /* GoogleService-Info.plist in Resources */,
 				3FF422D41DF7853E001D2874 /* Assets.xcassets in Resources */,
 				3FF422D21DF7853E001D2874 /* Main.storyboard in Resources */,
 			);
@@ -316,7 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F77F42F1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */,
+				953B2AAF1E05EA3400649F55 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F77F4301DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */,
+				953B2AB01E05EA3400649F55 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
