@@ -11,6 +11,13 @@
 		3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3295B41DFEFF1400612904 /* CustomUserCell.swift */; };
 		3F6E7E1E1DFB049700421F54 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E1D1DFB049700421F54 /* MenuController.swift */; };
 		3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */; };
+<<<<<<< Updated upstream
+=======
+		3F77F42E1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
+		3F77F42F1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
+		3F77F4301DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
+		3F9CC6AA1E02EB8B00BDBE3D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */; };
+>>>>>>> Stashed changes
 		3FF422CD1DF7853E001D2874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CC1DF7853E001D2874 /* AppDelegate.swift */; };
 		3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CE1DF7853E001D2874 /* ViewController.swift */; };
 		3FF422D21DF7853E001D2874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF422D01DF7853E001D2874 /* Main.storyboard */; };
@@ -49,6 +56,7 @@
 		3F6E7E1D1DFB049700421F54 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		3F84E5FA1E01984500A0F81D /* MindfulWaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MindfulWaste.entitlements; sourceTree = "<group>"; };
+		3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3FF422C91DF7853E001D2874 /* MindfulWaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindfulWaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF422CC1DF7853E001D2874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF422CE1DF7853E001D2874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 				3FF422CC1DF7853E001D2874 /* AppDelegate.swift */,
 				3FF422CE1DF7853E001D2874 /* ViewController.swift */,
 				3FF422D01DF7853E001D2874 /* Main.storyboard */,
+				3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */,
 				3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */,
 				3F6E7E1D1DFB049700421F54 /* MenuController.swift */,
 				3F3295B41DFEFF1400612904 /* CustomUserCell.swift */,
@@ -458,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F9CC6AA1E02EB8B00BDBE3D /* LoginView.swift in Sources */,
 				3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */,
 				3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */,
 				3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */,

@@ -25,6 +25,7 @@ class MenuController: UITableViewController {
         {
             let newCell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! CustomUserCell
             newCell.backgroundView?.alpha = 0.1
+            newCell.selectionStyle = .none
             return newCell
         }
         else
@@ -35,6 +36,7 @@ class MenuController: UITableViewController {
             cell.textLabel?.font = UIFont(name: "Cochin", size: 20)
             cell.backgroundView?.alpha = 0.1
             cell.backgroundColor = UIColor.clear
+            cell.selectionStyle = .none
             return cell
         }
         
@@ -79,22 +81,18 @@ class MenuController: UITableViewController {
         if indexPath.section == 0 && indexPath.row == 0
         {
             performSegue(withIdentifier: "showLogin", sender: nil)
-            dim(direction: .In, alpha: 0.5, speed: 0.5)
         }
+        
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showLogin"
         {
-            dim(direction: .In, alpha: 0.5, speed: 0.5)
-            print("called")
+            dim(direction: .In, alpha: 0.8, speed: 0.5)
+            let dvc = segue.destination as! LoginView
+            dvc.senderVC = self
         }
-    }
-    
-    @IBAction func unwindFromSecondary()
-    {
- 
     }
     
     func dim(direction: Direction, alpha: CGFloat, speed: CGFloat)
@@ -110,15 +108,20 @@ class MenuController: UITableViewController {
                     dimView.alpha = alpha
                 })
             case .Out:
-                dimView.alpha = alpha
+                 self.view.subviews.last?.alpha = alpha
                 UIView.animate(withDuration: TimeInterval(speed), animations: {
-                    dimView.alpha = 0.0
+                    self.view.subviews.last?.alpha = 0.0
                 }, completion: { (bool:Bool) in
-                    dimView.removeFromSuperview()
+                    self.view.subviews.last?.removeFromSuperview()
                 })
             
         }
         
+    }
+    
+    @IBAction func unwindFromSecondary()
+    {
+        dim(direction: .Out, alpha: 0.8, speed: 0.5)
     }
     
     
