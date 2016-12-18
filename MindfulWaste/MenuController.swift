@@ -9,6 +9,7 @@ class MenuController: UITableViewController {
     
     //reports, new report, organization(s)?
     let array = ["Cell number 1", "Cell number 2", "Cell number 3"]
+    var user = ""
     override func viewDidLoad()
     {
         let imageView = UIImageView(image: UIImage(named: "greenGradient"))
@@ -26,6 +27,10 @@ class MenuController: UITableViewController {
             let newCell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! CustomUserCell
             newCell.backgroundView?.alpha = 0.1
             newCell.selectionStyle = .none
+            if user != ""
+            {
+                newCell.userLabel.text = user
+            }
             return newCell
         }
         else

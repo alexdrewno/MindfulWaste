@@ -7,6 +7,7 @@ target 'MindfulWaste' do
   pod 'Firebase/Core'
   pod 'SideMenuController'
   pod 'Charts/Realm'
+  pod 'Firebase/Auth'
 
   # Pods for MindfulWaste
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BDFA8E6C210F7B46AFC10A75D1F5E807"
+               BlueprintIdentifier = "41CF1E1D5468EF95FB2AD8FE3FE408BA"
                BuildableName = "Pods_MindfulWaste.framework"
                BlueprintName = "Pods-MindfulWaste"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BDFA8E6C210F7B46AFC10A75D1F5E807"
+            BlueprintIdentifier = "41CF1E1D5468EF95FB2AD8FE3FE408BA"
             BuildableName = "Pods_MindfulWaste.framework"
             BlueprintName = "Pods-MindfulWaste"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BDFA8E6C210F7B46AFC10A75D1F5E807"
-            BuildableName = "Pods_MindfulWaste.framework"
-            BlueprintName = "Pods-MindfulWaste"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

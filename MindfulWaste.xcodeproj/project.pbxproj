@@ -11,10 +11,6 @@
 		3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3295B41DFEFF1400612904 /* CustomUserCell.swift */; };
 		3F6E7E1E1DFB049700421F54 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E1D1DFB049700421F54 /* MenuController.swift */; };
 		3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */; };
-
-		3F77F42E1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
-		3F77F42F1DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
-		3F77F4301DF9AFDD00414B6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F42D1DF9AFDD00414B6A /* GoogleService-Info.plist */; };
 		3F9CC6AA1E02EB8B00BDBE3D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */; };
 		3FF422CD1DF7853E001D2874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CC1DF7853E001D2874 /* AppDelegate.swift */; };
 		3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CE1DF7853E001D2874 /* ViewController.swift */; };
@@ -241,6 +237,7 @@
 				3FF422E51DF7853E001D2874 /* Frameworks */,
 				3FF422E61DF7853E001D2874 /* Resources */,
 				0246865FA8B570A28C26190A /* [CP] Copy Pods Resources */,
+				F6F60807FCE9A576737F1D8E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -410,7 +407,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A39D49BFA6F424A33FA3335C /* [CP] Check Pods Manifest.lock */ = {
@@ -425,7 +422,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BC95B8468A0080E829AE3E96 /* [CP] Embed Pods Frameworks */ = {
@@ -455,7 +452,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F6F60807FCE9A576737F1D8E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWasteUITests/Pods-MindfulWasteUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
