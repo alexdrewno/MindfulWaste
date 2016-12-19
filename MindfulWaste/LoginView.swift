@@ -57,7 +57,6 @@ class LoginView : UIViewController
                         {
                             FIRAuth.auth()?.signIn(withEmail: self.textFields[0].text!, password: self.textFields[1].text!, completion: { (user: FIRUser?, error: Error?) in
                                     self.senderVC.unwindFromSecondary()
-                                    self.senderVC.user = self.textFields[0].text!
                                     self.senderVC.tableView.reloadData()
                                     self.dismiss(animated: true, completion: nil)
                             })
@@ -77,7 +76,6 @@ class LoginView : UIViewController
             {
                 FIRAuth.auth()?.signIn(withEmail: self.textFields[0].text!, password: self.textFields[1].text!, completion: { (user: FIRUser?, error: Error?) in
                         self.senderVC.unwindFromSecondary()
-                        self.senderVC.user = self.textFields[0].text!
                         self.senderVC.tableView.reloadData()
                         self.dismiss(animated: true, completion: nil)
                     })

@@ -1,15 +1,16 @@
 import UIKit
 import SideMenuController
+import FirebaseAuth
 
 class MenuController: UITableViewController {
     
     enum Direction{ case In, Out }
     
     
-    
+
     //reports, new report, organization(s)?
-    let array = ["Cell number 1", "Cell number 2", "Cell number 3"]
-    var user = ""
+    let array = ["New Report", "Cell number 2", "Cell number 3"]
+    
     override func viewDidLoad()
     {
         let imageView = UIImageView(image: UIImage(named: "greenGradient"))
@@ -27,9 +28,9 @@ class MenuController: UITableViewController {
             let newCell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! CustomUserCell
             newCell.backgroundView?.alpha = 0.1
             newCell.selectionStyle = .none
-            if user != ""
+            if FIRAuth.auth()?.currentUser != nil
             {
-                newCell.userLabel.text = user
+                newCell.userLabel.text = FIRAuth.auth()!.currentUser!.email!
             }
             return newCell
         }
@@ -86,6 +87,10 @@ class MenuController: UITableViewController {
         if indexPath.section == 0 && indexPath.row == 0
         {
             performSegue(withIdentifier: "showLogin", sender: nil)
+        }
+        else if indexPath.section == 1 && indexPath.row == 0
+        {
+            sideMenuController?.performSegue(withIdentifier: "newReport", sender: nil)
         }
         
         
