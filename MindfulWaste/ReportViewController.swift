@@ -10,6 +10,7 @@ class ReportViewController: UIViewController, UICollectionViewDelegate, UICollec
     let colors = [UIColor.red, UIColor.green, UIColor.brown, UIColor.lightGray, UIColor.yellow, UIColor.orange]
     var amount = [0,0,0,0,0,0]
     let ref = FIRDatabase.database().reference(withPath: "reports")
+    var selectedCategory = ""
     
     override func viewDidLoad()
     {
@@ -72,8 +73,9 @@ class ReportViewController: UIViewController, UICollectionViewDelegate, UICollec
                 self.collectionView.reloadData()
             }
         }))
-        present(alert, animated: false)
-        
+       // present(alert, animated: false)
+        selectedCategory = categories[indexPath.row]
+        performSegue(withIdentifier: "detailReport", sender: nil)
     }
 
     @IBAction func saveAction(_ sender: Any)
@@ -97,4 +99,12 @@ class ReportViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "detailReport"
+        {
+            let dvc = segue.destination as! DetailReportViewController
+            dvc.category = self.selectedCategory
+        }
+    }
 }

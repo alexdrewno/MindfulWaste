@@ -12,6 +12,7 @@
 		3F6E7E1E1DFB049700421F54 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E1D1DFB049700421F54 /* MenuController.swift */; };
 		3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */; };
 		3F9CC6AA1E02EB8B00BDBE3D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */; };
+		3F9E59B41E269DE10052416A /* DetailReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E59B31E269DE10052416A /* DetailReportViewController.swift */; };
 		3FF422CD1DF7853E001D2874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CC1DF7853E001D2874 /* AppDelegate.swift */; };
 		3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CE1DF7853E001D2874 /* ViewController.swift */; };
 		3FF422D21DF7853E001D2874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF422D01DF7853E001D2874 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		3F84E5FA1E01984500A0F81D /* MindfulWaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MindfulWaste.entitlements; sourceTree = "<group>"; };
 		3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3F9E59B31E269DE10052416A /* DetailReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailReportViewController.swift; sourceTree = "<group>"; };
 		3FF422C91DF7853E001D2874 /* MindfulWaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindfulWaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF422CC1DF7853E001D2874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF422CE1DF7853E001D2874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				3FF422D01DF7853E001D2874 /* Main.storyboard */,
 				956F3A501E078F4E006EDE6A /* Report.swift */,
 				9554EB4A1E076B0E00771CC6 /* ReportViewController.swift */,
+				3F9E59B31E269DE10052416A /* DetailReportViewController.swift */,
 				3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */,
 				3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */,
 				3F6E7E1D1DFB049700421F54 /* MenuController.swift */,
@@ -488,6 +491,7 @@
 			files = (
 				3F9CC6AA1E02EB8B00BDBE3D /* LoginView.swift in Sources */,
 				3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */,
+				3F9E59B41E269DE10052416A /* DetailReportViewController.swift in Sources */,
 				3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */,
 				3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */,
 				956F3A4F1E077A0E006EDE6A /* CustomCollectionCell.swift in Sources */,
