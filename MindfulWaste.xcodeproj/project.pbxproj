@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		0BC4F91BC60C493847D3714F /* Pods_MindfulWasteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55D4E938AE4606BAA698DC0 /* Pods_MindfulWasteUITests.framework */; };
 		3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3295B41DFEFF1400612904 /* CustomUserCell.swift */; };
+		3F67B0B21E291304004819B7 /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67B0B11E291304004819B7 /* ReportCell.swift */; };
 		3F6E7E1E1DFB049700421F54 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E1D1DFB049700421F54 /* MenuController.swift */; };
 		3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */; };
 		3F9CC6AA1E02EB8B00BDBE3D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */; };
-		3F9E59B41E269DE10052416A /* DetailReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E59B31E269DE10052416A /* DetailReportViewController.swift */; };
 		3FF422CD1DF7853E001D2874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CC1DF7853E001D2874 /* AppDelegate.swift */; };
 		3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CE1DF7853E001D2874 /* ViewController.swift */; };
 		3FF422D21DF7853E001D2874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF422D01DF7853E001D2874 /* Main.storyboard */; };
@@ -51,11 +51,11 @@
 		00B447B2BE47E3BAD88B07C2 /* Pods_MindfulWasteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindfulWasteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D915108F249FCC14E432515 /* Pods-MindfulWaste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWaste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste.debug.xcconfig"; sourceTree = "<group>"; };
 		3F3295B41DFEFF1400612904 /* CustomUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUserCell.swift; sourceTree = "<group>"; };
+		3F67B0B11E291304004819B7 /* ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
 		3F6E7E1D1DFB049700421F54 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		3F84E5FA1E01984500A0F81D /* MindfulWaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MindfulWaste.entitlements; sourceTree = "<group>"; };
 		3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		3F9E59B31E269DE10052416A /* DetailReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailReportViewController.swift; sourceTree = "<group>"; };
 		3FF422C91DF7853E001D2874 /* MindfulWaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindfulWaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF422CC1DF7853E001D2874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF422CE1DF7853E001D2874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 				3FF422D01DF7853E001D2874 /* Main.storyboard */,
 				956F3A501E078F4E006EDE6A /* Report.swift */,
 				9554EB4A1E076B0E00771CC6 /* ReportViewController.swift */,
-				3F9E59B31E269DE10052416A /* DetailReportViewController.swift */,
 				3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */,
+				3F67B0B11E291304004819B7 /* ReportCell.swift */,
 				3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */,
 				3F6E7E1D1DFB049700421F54 /* MenuController.swift */,
 				3F3295B41DFEFF1400612904 /* CustomUserCell.swift */,
@@ -419,7 +419,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A39D49BFA6F424A33FA3335C /* [CP] Check Pods Manifest.lock */ = {
@@ -434,7 +434,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BC95B8468A0080E829AE3E96 /* [CP] Embed Pods Frameworks */ = {
@@ -464,7 +464,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F6F60807FCE9A576737F1D8E /* [CP] Embed Pods Frameworks */ = {
@@ -491,7 +491,6 @@
 			files = (
 				3F9CC6AA1E02EB8B00BDBE3D /* LoginView.swift in Sources */,
 				3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */,
-				3F9E59B41E269DE10052416A /* DetailReportViewController.swift in Sources */,
 				3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */,
 				3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */,
 				956F3A4F1E077A0E006EDE6A /* CustomCollectionCell.swift in Sources */,
@@ -499,6 +498,7 @@
 				3F6E7E1E1DFB049700421F54 /* MenuController.swift in Sources */,
 				3FF422CD1DF7853E001D2874 /* AppDelegate.swift in Sources */,
 				9554EB4B1E076B0E00771CC6 /* ReportViewController.swift in Sources */,
+				3F67B0B21E291304004819B7 /* ReportCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

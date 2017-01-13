@@ -1,27 +1,23 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import FoldingCell
 
 
-class ReportViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource
+class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
-    @IBOutlet weak var collectionView: UICollectionView!
     let categories = ["Fruits", "Vegetables", "Protein", "Dairy", "Grains", "Oils"]
     let colors = [UIColor.red, UIColor.green, UIColor.brown, UIColor.lightGray, UIColor.yellow, UIColor.orange]
     var amount = [0,0,0,0,0,0]
     let ref = FIRDatabase.database().reference(withPath: "reports")
-    var selectedCategory = ""
+    @IBOutlet var tableView: UITableView!
+    let kCloseCellHeight: CGFloat = 179
+    let kOpenCellHeight: CGFloat = 488
     
     override func viewDidLoad()
     {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        let layout = UICollectionViewFlowLayout()
-        let screenWidth = UIScreen.main.bounds.width
-        let width = floor(screenWidth/2 - 16)
-        layout.itemSize = CGSize(width:width, height: width)
-        collectionView.collectionViewLayout = layout
-        self.automaticallyAdjustsScrollViewInsets = false
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     
@@ -29,55 +25,17 @@ class ReportViewController: UIViewController, UICollectionViewDelegate, UICollec
     {
         sideMenuController?.performSegue(withIdentifier: "showCenterController1", sender: nil)
     }
-
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2.0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2.0
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CustomCollectionCell
-        cell.categoryLabel.text! = categories[indexPath.row]
-        cell.numberLabel.text! = "\(amount[indexPath.row])"
-        cell.categoryLabel.adjustsFontSizeToFitWidth = true
-        cell.numberLabel.adjustsFontSizeToFitWidth = true
-        cell.backgroundColor = colors[indexPath.row]
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        
-        let alert = UIAlertController(title: "Change Amount", message: "How many lbs of \(categories[indexPath.row])?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alert.addTextField { (textField) in
-            textField.keyboardType = .numberPad
-        }
-        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { (action: UIAlertAction) in
-            if alert.textFields![0].text != nil
-            {
-                self.amount[indexPath.row] = Int(alert.textFields![0].text!)!
-                self.collectionView.reloadData()
-            }
-        }))
-       // present(alert, animated: false)
-        selectedCategory = categories[indexPath.row]
-        performSegue(withIdentifier: "detailReport", sender: nil)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 
+    
+   
     @IBAction func saveAction(_ sender: Any)
     {
         if FIRAuth.auth()!.currentUser != nil
@@ -96,15 +54,6 @@ class ReportViewController: UIViewController, UICollectionViewDelegate, UICollec
                 
             }))
             present(alert, animated: false, completion: nil)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if segue.identifier == "detailReport"
-        {
-            let dvc = segue.destination as! DetailReportViewController
-            dvc.category = self.selectedCategory
         }
     }
 }
