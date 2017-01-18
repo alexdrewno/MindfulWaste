@@ -193,6 +193,10 @@ open class FoldingCell: UITableViewCell {
     let contSize        = containerView.bounds.size
     let forgSize        = foregroundView.bounds.size
     
+    print(contSize)
+    print(forgSize, "hello")
+    
+    
     // added first item
     var image = containerView.pb_takeSnapshot(CGRect(x: 0, y: 0, width: contSize.width, height: forgSize.height))
     var imageView = UIImageView(image: image)
