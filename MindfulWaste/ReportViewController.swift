@@ -12,9 +12,9 @@ fileprivate struct C {
 
 class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
-    let categories = ["Fruits", "Vegetables", "Protein", "Dairy", "Grains", "Oils"]
-    let colors = [UIColor.red, UIColor.green, UIColor.brown, UIColor.lightGray, UIColor.yellow, UIColor.orange]
-    var amount = [0,0,0,0,0,0]
+    let categories = ["Fruits", "Vegetables", "Dry Goods", "Dairy", "Misc."]
+    let colors = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.lightGray, UIColor.orange]
+    var amount = [0,0,0,0,0]
     let ref = FIRDatabase.database().reference(withPath: "reports")
     @IBOutlet var tableView: UITableView!
     let kCloseCellHeight: CGFloat = 179
@@ -36,7 +36,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -44,7 +44,20 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reportCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reportCell", for: indexPath) as! ReportCell
+        
+        cell.foregroundView.backgroundColor = colors[indexPath.row]
+        cell.leftView.backgroundColor = colors[indexPath.row].darker(by: 20.0)
+        cell.amountLabel.backgroundColor = colors[indexPath.row].darker()
+        cell.groupLabel.text = categories[indexPath.row]
+        cell.amountLabel.text = "\(amount[indexPath.row]) lbs."
+        cell.containerView.backgroundColor = colors[indexPath.row].lighter(by: 10.0)
+        cell.innerContainer.backgroundColor = colors[indexPath.row].lighter()
+        cell.backViewColor = colors[indexPath.row].darker(by: 45.0)!
+        cell.topView.backgroundColor = colors[indexPath.row].darker(by: 20.0)
+        cell.categoryContainerLabel.text = categories[indexPath.row]
+        cell.insideTableView.backgroundColor = UIColor.clear
+        
         return cell
     }
     
@@ -99,6 +112,29 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
             }))
             present(alert, animated: false, completion: nil)
+        }
+    }
+}
+
+extension UIColor {
+    
+    func lighter(by percentage:CGFloat=30.0) -> UIColor? {
+        return self.adjust(by: abs(percentage) )
+    }
+    
+    func darker(by percentage:CGFloat=30.0) -> UIColor? {
+        return self.adjust(by: -1 * abs(percentage) )
+    }
+    
+    func adjust(by percentage:CGFloat=30.0) -> UIColor? {
+        var r:CGFloat=0, g:CGFloat=0, b:CGFloat=0, a:CGFloat=0;
+        if(self.getRed(&r, green: &g, blue: &b, alpha: &a)){
+            return UIColor(red: min(r + percentage/100, 1.0),
+                           green: min(g + percentage/100, 1.0),
+                           blue: min(b + percentage/100, 1.0),
+                           alpha: a)
+        }else{
+            return nil
         }
     }
 }

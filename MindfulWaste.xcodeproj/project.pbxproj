@@ -20,6 +20,7 @@
 		3FF422D71DF7853E001D2874 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF422D51DF7853E001D2874 /* LaunchScreen.storyboard */; };
 		3FF422E21DF7853E001D2874 /* MindfulWasteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422E11DF7853E001D2874 /* MindfulWasteTests.swift */; };
 		3FF422ED1DF7853E001D2874 /* MindfulWasteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422EC1DF7853E001D2874 /* MindfulWasteUITests.swift */; };
+		3FF772211E32811000F2B6E0 /* DetailedReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF772201E32811000F2B6E0 /* DetailedReportCell.swift */; };
 		953B2AAE1E05EA3400649F55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */; };
 		953B2AAF1E05EA3400649F55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */; };
 		953B2AB01E05EA3400649F55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */; };
@@ -69,6 +70,7 @@
 		3FF422E81DF7853E001D2874 /* MindfulWasteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindfulWasteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF422EC1DF7853E001D2874 /* MindfulWasteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulWasteUITests.swift; sourceTree = "<group>"; };
 		3FF422EE1DF7853E001D2874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FF772201E32811000F2B6E0 /* DetailedReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedReportCell.swift; sourceTree = "<group>"; };
 		4098CA507494378DF3710A41 /* Pods-MindfulWasteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWasteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWasteTests/Pods-MindfulWasteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		40F16CB367FFF2D958C24AAE /* Pods_MindfulWaste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindfulWaste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		485471B5AE89AD167B65516F /* Pods-MindfulWasteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWasteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWasteUITests/Pods-MindfulWasteUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,17 +138,13 @@
 			isa = PBXGroup;
 			children = (
 				3F84E5FA1E01984500A0F81D /* MindfulWaste.entitlements */,
+				3FF422D01DF7853E001D2874 /* Main.storyboard */,
+				3FF7721F1E327EA000F2B6E0 /* User-LoginFiles */,
+				3FF7721E1E327DE400F2B6E0 /* ReportFiles */,
 				3FF422CC1DF7853E001D2874 /* AppDelegate.swift */,
 				3FF422CE1DF7853E001D2874 /* ViewController.swift */,
-				3FF422D01DF7853E001D2874 /* Main.storyboard */,
-				956F3A501E078F4E006EDE6A /* Report.swift */,
-				9554EB4A1E076B0E00771CC6 /* ReportViewController.swift */,
-				3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */,
-				3F67B0B11E291304004819B7 /* ReportCell.swift */,
 				3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */,
 				3F6E7E1D1DFB049700421F54 /* MenuController.swift */,
-				3F3295B41DFEFF1400612904 /* CustomUserCell.swift */,
-				956F3A4E1E077A0E006EDE6A /* CustomCollectionCell.swift */,
 				3FF422D31DF7853E001D2874 /* Assets.xcassets */,
 				3FF422D51DF7853E001D2874 /* LaunchScreen.storyboard */,
 				3FF422D81DF7853E001D2874 /* Info.plist */,
@@ -171,6 +169,27 @@
 				3FF422EE1DF7853E001D2874 /* Info.plist */,
 			);
 			path = MindfulWasteUITests;
+			sourceTree = "<group>";
+		};
+		3FF7721E1E327DE400F2B6E0 /* ReportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				956F3A501E078F4E006EDE6A /* Report.swift */,
+				9554EB4A1E076B0E00771CC6 /* ReportViewController.swift */,
+				3F67B0B11E291304004819B7 /* ReportCell.swift */,
+				3FF772201E32811000F2B6E0 /* DetailedReportCell.swift */,
+			);
+			name = ReportFiles;
+			sourceTree = "<group>";
+		};
+		3FF7721F1E327EA000F2B6E0 /* User-LoginFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */,
+				3F3295B41DFEFF1400612904 /* CustomUserCell.swift */,
+				956F3A4E1E077A0E006EDE6A /* CustomCollectionCell.swift */,
+			);
+			name = "User-LoginFiles";
 			sourceTree = "<group>";
 		};
 		53EC7F6970DE1ED8EA9FDAAD /* Pods */ = {
@@ -490,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F9CC6AA1E02EB8B00BDBE3D /* LoginView.swift in Sources */,
+				3FF772211E32811000F2B6E0 /* DetailedReportCell.swift in Sources */,
 				3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */,
 				3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */,
 				3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */,
