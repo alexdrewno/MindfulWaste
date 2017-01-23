@@ -20,6 +20,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let kCloseCellHeight: CGFloat = 179
     let kOpenCellHeight: CGFloat = 493
     var cellHeights : [CGFloat] = []
+    var descriptions : [[String]] = []
     
     override func viewDidLoad()
     {
@@ -52,14 +53,15 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.groupLabel.text = categories[indexPath.row]
         cell.amountLabel.text = "\(amount[indexPath.row]) lbs."
         cell.containerView.backgroundColor = colors[indexPath.row].lighter(by: 10.0)
-        cell.innerContainer.backgroundColor = colors[indexPath.row].lighter()
+        cell.innerContainer.backgroundColor = colors[indexPath.row].lighter(by: 45.0)
         cell.backViewColor = colors[indexPath.row].darker(by: 45.0)!
         cell.topView.backgroundColor = colors[indexPath.row].darker(by: 20.0)
         cell.categoryContainerLabel.text = categories[indexPath.row]
-        cell.insideTableView.backgroundColor = UIColor.clear
-        
+    
         return cell
     }
+    
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
@@ -83,6 +85,8 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        
         if case let cell as FoldingCell = cell {
             if cellHeights[indexPath.row] == C.CellHeight.close {
                 cell.selectedAnimation(false, animated: false, completion:nil)
