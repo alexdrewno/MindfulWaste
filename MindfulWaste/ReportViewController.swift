@@ -65,7 +65,34 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
+        let cell = tableView.cellForRow(at: indexPath) as! ReportCell
+        
+        switch indexPath.row{
+        case 0:
+            cell.descriptions = ["Whole Fruit", "Packaged Fruit", "Fruit Juice", "Other Fruit"]
+            cell.color = UIColor.red.lighter()!
+            cell.insideTableView.reloadData()
+        case 1:
+            cell.descriptions =  ["Vegetables", "Packaged Vegetables", "Vegetable Juice", "Other Vegetables"]
+            cell.color = UIColor.green.lighter()!
+            cell.insideTableView.reloadData()
+        case 2:
+            cell.descriptions =  ["Misc. Bagged Snacks", "Fruit & Grain Bars", "Crackers", "Raisins", "Dry Cereal", "Granola", "Muffins", "Chips", "Other Dry Goods"]
+            cell.color = UIColor.yellow.lighter()!
+            cell.insideTableView.reloadData()
+        case 3:
+            cell.descriptions = ["Cheese", "Yogurt", "White Milk", "Chocolate Milk", "Strawberry Milk", "Other Dairy"]
+            cell.color = UIColor.lightGray
+            cell.insideTableView.reloadData()
+        case 4:
+            cell.descriptions = ["Items such as PB&J, etc."]
+            cell.color = UIColor.orange.lighter()!
+            cell.insideTableView.reloadData()
+        default:
+            break;
+        }
+        
+        
         
         var duration = 0.0
         if cellHeights[indexPath.row] == kCloseCellHeight { // open cell
@@ -86,6 +113,21 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
+//        let cell = tableView.cellForRow(at: indexPath) as! ReportCell
+//            switch indexPath.row{
+//            case 0:
+//                cell.descriptions = ["Cheese", "Yogurt", "White Milk", "Chocolate Milk", "Strawberry Milk", "Other Dairy"]
+//            case 1:
+//                cell.descriptions = ["Whole Fruit", "Packaged Fruit", "Fruit Juice", "Other Fruit"]
+//            case 2:
+//                cell.descriptions = ["Vegetables", "Packaged Vegetables", "Vegetable Juice", "Other Vegetables"]
+//            case 3:
+//               cell.descriptions = ["Misc. Bagged Snacks", "Fruit & Grain Bars", "Crackers", "Raisins", "Dry Cereal", "Granola", "Muffins", "Chips", "Other Dry Goods"]
+//            case 4:
+//                cell.descriptions = ["Items such as PB&J, etc."]
+//            default:
+//                break;
+//            }
         
         if case let cell as FoldingCell = cell {
             if cellHeights[indexPath.row] == C.CellHeight.close {

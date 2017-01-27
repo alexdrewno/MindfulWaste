@@ -30,30 +30,14 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
         insideTableView.dataSource = self
         insideTableView.allowsSelection = false
         insideTableView.backgroundColor = UIColor.clear
-        
-        
-        
         super.awakeFromNib()
     }
 
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        switch indexPath!.row{
-//        case 0:
-//            descriptions = ["Cheese", "Yogurt", "White Milk", "Chocolate Milk", "Strawberry Milk", "Other Dairy"]
-//        case 1:
-//            descriptions = ["Whole Fruit", "Packaged Fruit", "Fruit Juice", "Other Fruit"]
-//        case 2:
-//            descriptions = ["Vegetables", "Packaged Vegetables", "Vegetable Juice", "Other Vegetables"]
-//        case 3:
-//            descriptions = ["Misc. Bagged Snacks", "Fruit & Grain Bars", "Crackers", "Raisins", "Dry Cereal", "Granola", "Muffins", "Chips", "Other Dry Goods"]
-//        case 4:
-//            descriptions = ["Items such as PB&J, etc."]
-//        default:
-//            break;
-//        }
         return descriptions.count+1
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -84,9 +68,3 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
     }
 }
 
-extension UITableViewCell {
-    
-    var indexPath: IndexPath? {
-        return (superview?.superview as? ReportViewController)?.tableView.indexPath(for: self)
-    }
-}
