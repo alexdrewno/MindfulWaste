@@ -13,6 +13,7 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
     @IBOutlet var insideTableView: UITableView!
     var color : UIColor = UIColor.white
     var descriptions = [""]
+    var amountValues: [CGFloat] = [0]
   
     
     
@@ -57,8 +58,39 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
         if indexPath.row > 0
         {
             cell.details.text = descriptions[indexPath.row-1]
+            cell.amount.text = "\(amountValues[indexPath.row-1])"
+        }
+        else
+        {
+            cell.amount.isEnabled = false
         }
         return cell
+    }
+    
+    @IBAction func editingChanged(_ sender: AnyObject) {
+        
+        var superview = sender.superview!
+        
+        while superview?.superview != nil
+        {
+            if let superview = superview as? DetailedReportCell
+            {
+                let indexPath = insideTableView.indexPath(for: superview)!
+                (insideTableView.cellForRow(at: indexPath) as! DetailedReportCell).amount.keyboardType = .numberPad
+                amountValues[indexPath.row-1] = CGFloat(((insideTableView.cellForRow(at: indexPath) as! DetailedReportCell).amount.text! as! NSString).floatValue)
+                print(amountValues)
+                
+                //save the amount to the rootviewcontroller lmao
+                
+                break
+            }
+            else
+            {
+                superview = superview?.superview
+            }
+        }
+
+        
     }
     
     override func animationDuration(_ itemIndex:NSInteger, type:AnimationType)-> TimeInterval {

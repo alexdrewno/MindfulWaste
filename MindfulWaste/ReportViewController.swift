@@ -14,7 +14,12 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
 {
     let categories = ["Fruits", "Vegetables", "Dry Goods", "Dairy", "Misc."]
     let colors = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.lightGray, UIColor.orange]
-    var amount = [0,0,0,0,0]
+    var amount : [CGFloat] = [0,0,0,0,0]
+    var detailFruitAmount : [CGFloat] = [0,0,0,0]
+    var detailVegetablesAmount : [CGFloat] = [0,0,0,0]
+    var detailDryGoodsAmount : [CGFloat] = [0,0,0,0,0,0,0,0,0]
+    var detailDairyAmount : [CGFloat] = [0,0,0,0,0,0]
+    var detailMiscAmount : [CGFloat] = [0]
     let ref = FIRDatabase.database().reference(withPath: "reports")
     @IBOutlet var tableView: UITableView!
     let kCloseCellHeight: CGFloat = 179
@@ -70,23 +75,23 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         switch indexPath.row{
         case 0:
             cell.descriptions = ["Whole Fruit", "Packaged Fruit", "Fruit Juice", "Other Fruit"]
-            cell.color = UIColor.red.lighter()!
+            cell.amountValues = detailFruitAmount
             cell.insideTableView.reloadData()
         case 1:
             cell.descriptions =  ["Vegetables", "Packaged Vegetables", "Vegetable Juice", "Other Vegetables"]
-            cell.color = UIColor.green.lighter()!
+            cell.amountValues = detailVegetablesAmount
             cell.insideTableView.reloadData()
         case 2:
             cell.descriptions =  ["Misc. Bagged Snacks", "Fruit & Grain Bars", "Crackers", "Raisins", "Dry Cereal", "Granola", "Muffins", "Chips", "Other Dry Goods"]
-            cell.color = UIColor.yellow.lighter()!
+            cell.amountValues = detailDryGoodsAmount
             cell.insideTableView.reloadData()
         case 3:
             cell.descriptions = ["Cheese", "Yogurt", "White Milk", "Chocolate Milk", "Strawberry Milk", "Other Dairy"]
-            cell.color = UIColor.lightGray
+            cell.amountValues = detailDairyAmount
             cell.insideTableView.reloadData()
         case 4:
             cell.descriptions = ["Items such as PB&J, etc."]
-            cell.color = UIColor.orange.lighter()!
+            cell.amountValues = detailMiscAmount
             cell.insideTableView.reloadData()
         default:
             break;
@@ -142,23 +147,23 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
    
     @IBAction func saveAction(_ sender: Any)
     {
-        if FIRAuth.auth()!.currentUser != nil
-        {
-            let alert = UIAlertController(title: "Save Report", message: "Name your report", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            alert.addTextField(configurationHandler: nil)
-            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (_:UIAlertAction) in
-                let report = Report(name:alert.textFields![0].text!,f: self.amount[0], v: self.amount[1], p: self.amount[2], d: self.amount[3], g: self.amount[4], o: self.amount[5],user: FIRAuth.auth()!.currentUser!.email!)
-                if alert.textFields![0].hasText
-                {
-                    let groceryItemRef = self.ref.child(alert.textFields![0].text!.lowercased())
-                    groceryItemRef.setValue(report.toAnyObject())
-                }
-                
-                
-            }))
-            present(alert, animated: false, completion: nil)
-        }
+//        if FIRAuth.auth()!.currentUser != nil
+//        {
+//            let alert = UIAlertController(title: "Save Report", message: "Name your report", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//            alert.addTextField(configurationHandler: nil)
+//            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (_:UIAlertAction) in
+//                let report = Report(name:alert.textFields![0].text!,f: self.amount[0], v: self.amount[1], p: self.amount[2], d: self.amount[3], g: self.amount[4], o: self.amount[5],user: FIRAuth.auth()!.currentUser!.email!)
+//                if alert.textFields![0].hasText
+//                {
+//                    let groceryItemRef = self.ref.child(alert.textFields![0].text!.lowercased())
+//                    groceryItemRef.setValue(report.toAnyObject())
+//                }
+//                
+//                
+//            }))
+//            present(alert, animated: false, completion: nil)
+//        }
     }
 }
 

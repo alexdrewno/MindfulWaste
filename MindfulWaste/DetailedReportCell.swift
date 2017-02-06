@@ -4,9 +4,9 @@ class DetailedReportCell: UITableViewCell
 {
     
     @IBOutlet var details: UILabel!
-    @IBOutlet var amount: UILabel!
     @IBOutlet var cellView: UIView!
     @IBOutlet weak var outlien: UIView!
+    @IBOutlet var amount: UITextField!
     
     override func awakeFromNib() {
         backgroundColor = UIColor.clear
