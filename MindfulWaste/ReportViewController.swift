@@ -10,7 +10,7 @@ fileprivate struct C {
     }
 }
 
-class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FoldingCellDelegate
 {
     let categories = ["Fruits", "Vegetables", "Dry Goods", "Dairy", "Misc."]
     let colors = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.lightGray, UIColor.orange]
@@ -62,8 +62,63 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.backViewColor = colors[indexPath.row].darker(by: 45.0)!
         cell.topView.backgroundColor = colors[indexPath.row].darker(by: 20.0)
         cell.categoryContainerLabel.text = categories[indexPath.row]
+        cell.delegate = self
     
         return cell
+    }
+    
+    func updateInfo(groupName: String, array: [CGFloat])
+    {
+        switch groupName{
+        
+        case "Fruits":
+            detailFruitAmount = array
+            print("fruit", detailFruitAmount)
+            amount[0] = 0
+            for num in detailFruitAmount
+            {
+                amount[0] += num
+            }
+        case "Vegetables":
+            detailVegetablesAmount = array
+            print("vegatables", detailVegetablesAmount)
+            amount[1] = 0
+            for num in detailVegetablesAmount
+            {
+                amount[1] += num
+            }
+        case "Dry Goods":
+            detailDryGoodsAmount = array
+            print("Dry Goods", detailDryGoodsAmount)
+            amount[2] = 0
+            for num in detailDryGoodsAmount
+            {
+                amount[2] += num
+            }
+        case "Dairy":
+            detailDairyAmount = array
+            print("Dairy", detailDairyAmount)
+            amount[3] = 0
+            for num in detailDairyAmount
+            {
+                amount[3] += num
+            }
+        case "Misc.":
+            detailMiscAmount = array
+            print("Misc.", detailMiscAmount)
+            amount[4] = 0
+            for num in detailMiscAmount
+            {
+                amount[4] += num
+            }
+        default:
+            break
+        
+        }
+    }
+    
+    func finishedEditing() {
+        self.tableView.reloadData()
     }
     
 
@@ -77,22 +132,27 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.descriptions = ["Whole Fruit", "Packaged Fruit", "Fruit Juice", "Other Fruit"]
             cell.amountValues = detailFruitAmount
             cell.insideTableView.reloadData()
+            cell.amountLabel.text = "\(amount[0]) lbs."
         case 1:
             cell.descriptions =  ["Vegetables", "Packaged Vegetables", "Vegetable Juice", "Other Vegetables"]
             cell.amountValues = detailVegetablesAmount
             cell.insideTableView.reloadData()
+            cell.amountLabel.text = "\(amount[1]) lbs"
         case 2:
             cell.descriptions =  ["Misc. Bagged Snacks", "Fruit & Grain Bars", "Crackers", "Raisins", "Dry Cereal", "Granola", "Muffins", "Chips", "Other Dry Goods"]
             cell.amountValues = detailDryGoodsAmount
             cell.insideTableView.reloadData()
+            cell.amountLabel.text = "\(amount[2]) lbs"
         case 3:
             cell.descriptions = ["Cheese", "Yogurt", "White Milk", "Chocolate Milk", "Strawberry Milk", "Other Dairy"]
             cell.amountValues = detailDairyAmount
             cell.insideTableView.reloadData()
+            cell.amountLabel.text = "\(amount[3]) lbs"
         case 4:
             cell.descriptions = ["Items such as PB&J, etc."]
             cell.amountValues = detailMiscAmount
             cell.insideTableView.reloadData()
+            cell.amountLabel.text = "\(amount[4]) lbs"
         default:
             break;
         }
@@ -117,22 +177,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-//        let cell = tableView.cellForRow(at: indexPath) as! ReportCell
-//            switch indexPath.row{
-//            case 0:
-//                cell.descriptions = ["Cheese", "Yogurt", "White Milk", "Chocolate Milk", "Strawberry Milk", "Other Dairy"]
-//            case 1:
-//                cell.descriptions = ["Whole Fruit", "Packaged Fruit", "Fruit Juice", "Other Fruit"]
-//            case 2:
-//                cell.descriptions = ["Vegetables", "Packaged Vegetables", "Vegetable Juice", "Other Vegetables"]
-//            case 3:
-//               cell.descriptions = ["Misc. Bagged Snacks", "Fruit & Grain Bars", "Crackers", "Raisins", "Dry Cereal", "Granola", "Muffins", "Chips", "Other Dry Goods"]
-//            case 4:
-//                cell.descriptions = ["Items such as PB&J, etc."]
-//            default:
-//                break;
-//            }
+     
         
         if case let cell as FoldingCell = cell {
             if cellHeights[indexPath.row] == C.CellHeight.close {

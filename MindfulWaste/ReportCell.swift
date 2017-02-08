@@ -1,6 +1,11 @@
 import UIKit
 import FoldingCell
 
+protocol FoldingCellDelegate {
+    func updateInfo(groupName: String, array: [CGFloat])
+    func finishedEditing()
+}
+
 class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
 {
     @IBOutlet var leftView: UIView!
@@ -14,6 +19,7 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
     var color : UIColor = UIColor.white
     var descriptions = [""]
     var amountValues: [CGFloat] = [0]
+    var delegate : FoldingCellDelegate? = nil
   
     
     
@@ -67,20 +73,45 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
+    
+    @IBAction func editingFinished(_ sender: AnyObject)
+    {
+        //delegate?.finishedEditing()
+    }
+    
     @IBAction func editingChanged(_ sender: AnyObject) {
         
         var superview = sender.superview!
         
-        while superview?.superview != nil
+        while superview != nil
         {
             if let superview = superview as? DetailedReportCell
             {
                 let indexPath = insideTableView.indexPath(for: superview)!
-                (insideTableView.cellForRow(at: indexPath) as! DetailedReportCell).amount.keyboardType = .numberPad
-                amountValues[indexPath.row-1] = CGFloat(((insideTableView.cellForRow(at: indexPath) as! DetailedReportCell).amount.text! as! NSString).floatValue)
+                let cell = (insideTableView.cellForRow(at: indexPath) as! DetailedReportCell)
+                cell.amount.keyboardType = .numberPad
+                amountValues[indexPath.row-1] = CGFloat(((insideTableView.cellForRow(at: indexPath) as! DetailedReportCell).amount.text! as! NSString).doubleValue)
+                
                 print(amountValues)
                 
                 //save the amount to the rootviewcontroller lmao
+                
+                switch groupLabel.text!
+                {
+                case "Fruits":
+                    delegate?.updateInfo(groupName: "Fruits", array: amountValues)
+                    print("updateFruits")
+                case "Vegetables":
+                    delegate?.updateInfo(groupName: "Vegetables", array: amountValues)
+                case "Dry Goods":
+                    delegate?.updateInfo(groupName: "Dry Goods", array: amountValues)
+                case "Dairy":
+                    delegate?.updateInfo(groupName: "Dairy", array: amountValues)
+                case "Misc.":
+                    delegate?.updateInfo(groupName: "Misc.", array: amountValues)
+                default:
+                    break
+                }
                 
                 break
             }
