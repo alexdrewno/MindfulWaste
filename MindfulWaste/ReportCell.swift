@@ -1,5 +1,6 @@
 import UIKit
 import FoldingCell
+import Charts
 
 protocol FoldingCellDelegate {
     func updateInfo(groupName: String, array: [CGFloat])
@@ -20,6 +21,7 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
     var descriptions = [""]
     var amountValues: [CGFloat] = [0]
     var delegate : FoldingCellDelegate? = nil
+    @IBOutlet var barChartView: BarChartView!
   
     
     
@@ -37,7 +39,25 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
         insideTableView.dataSource = self
         insideTableView.allowsSelection = false
         insideTableView.backgroundColor = UIColor.clear
+        barChartView.drawGridBackgroundEnabled = false
         super.awakeFromNib()
+    }
+    
+    func updateChartWithData() {
+        var dataEntries: [BarChartDataEntry] = []
+        var randoColors = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.lightGray, UIColor.orange]
+        var colors : [UIColor] = []
+        for i in 0..<descriptions.count {
+            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(amountValues[i]))
+            dataEntries.append(dataEntry)
+            colors.append(randoColors[Int(arc4random() % 5)])
+            
+            
+        }
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Details")
+        chartDataSet.colors = colors
+        let chartData = BarChartData(dataSet: chartDataSet)
+        barChartView.data = chartData
     }
 
     
@@ -77,6 +97,7 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
     @IBAction func editingFinished(_ sender: AnyObject)
     {
         //delegate?.finishedEditing()
+        updateChartWithData()
     }
     
     @IBAction func editingChanged(_ sender: AnyObject) {

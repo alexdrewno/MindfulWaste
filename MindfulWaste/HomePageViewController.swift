@@ -32,27 +32,27 @@ class HomePageViewController : UIViewController, SideMenuControllerDelegate
             self.amount = 0
 
             
+            //maybe will crash here, did not test code, *praying that it works*
+            
             for child in snapshot.children
             {
                 let dict = (child as! FIRDataSnapshot).value as! NSDictionary
-//                self.dairyAmount += dict["dairyAmount"] as! Int
-//                self.fruitAmount += dict["fruitAmount"] as! Int
-//                self.grainsAmount += dict["grainsAmount"] as! Int
-//                self.oilsAmount += dict["oilsAmount"] as! Int
-//                self.proteinAmount += dict["proteinAmount"] as! Int
-//                self.vegetableAmount += dict["vegetableAmount"] as! Int
-//                self.amount = self.dairyAmount + self.fruitAmount + self.grainsAmount + self.oilsAmount + self.proteinAmount + self.vegetableAmount
+                self.dairyAmount += (dict["dairyInformation"] as! NSDictionary)["dairyAmount"]! as! Int
+                self.fruitsAmount += (dict["fruitInformation"] as! NSDictionary)["fruitAmount"]! as! Int
+                self.vegetablesAmount += (dict["vegetableInformation"] as! NSDictionary)["vegetableAmount"]! as! Int
+                self.dryGoodsAmount += (dict["dryGoodsInformation"] as! NSDictionary)["dryGoodsAmount"]! as! Int
+                self.miscAmount += (dict["miscInformation"] as! NSDictionary)["miscAmount"]! as! Int
+                self.amount = self.dairyAmount + self.fruitsAmount + self.vegetablesAmount + self.miscAmount + self.dryGoodsAmount
                 print(self.amount)
             }
             
             
-//            self.amountArray[0] = self.fruitAmount
-//            self.amountArray[1] = self.vegetableAmount
-//            self.amountArray[2] = self.proteinAmount
-//            self.amountArray[3] = self.dairyAmount
-//            self.amountArray[4] = self.grainsAmount
-//            self.amountArray[5] = self.oilsAmount
-//            self.setPieChart(xVals: self.amountArray, yVals: self.categories)
+            self.amountArray[0] = self.fruitsAmount
+            self.amountArray[1] = self.vegetablesAmount
+            self.amountArray[2] = self.dryGoodsAmount
+            self.amountArray[3] = self.dairyAmount
+            self.amountArray[4] = self.miscAmount
+            self.setPieChart(xVals: self.amountArray, yVals: self.categories)
             
         })
     }

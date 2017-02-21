@@ -75,9 +75,20 @@ class LoginView : UIViewController
             if textFields[0].hasText && textFields[1].hasText 
             {
                 FIRAuth.auth()?.signIn(withEmail: self.textFields[0].text!, password: self.textFields[1].text!, completion: { (user: FIRUser?, error: Error?) in
-                        self.senderVC.unwindFromSecondary()
-                        self.senderVC.tableView.reloadData()
-                        self.dismiss(animated: true, completion: nil)
+                    if error == nil
+                    {
+                        FIRAuth.auth()?.signIn(withEmail: self.textFields[0].text!, password: self.textFields[1].text!, completion: { (user: FIRUser?, error: Error?) in
+                            self.senderVC.unwindFromSecondary()
+                            self.senderVC.tableView.reloadData()
+                            self.dismiss(animated: true, completion: nil)
+                        })
+                    }
+                    else
+                    {
+                        let alertVC = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                        alertVC.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                        self.present(alertVC, animated: false)
+                    }
                     })
             }
         }

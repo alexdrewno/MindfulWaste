@@ -78,7 +78,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="452"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J7b-ql-Pwj" id="1UN-ZV-JR8">
-                                            <frame key="frameInset" width="375" height="451"/>
+                                            <frame key="frameInset" width="375" height="452"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VMi-zY-gbL" customClass="RotatedView" customModule="FoldingCell">
@@ -87,6 +87,13 @@
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5PX-qv-uwW">
                                                             <frame key="frameInset" minX="29.81%" minY="4.55%" width="67.97%" height="90.91%"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                            <subviews>
+                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTn-l5-Vya" customClass="BarChartView" customModule="Charts">
+                                                                    <frame key="frameInset" minX="0.0%" minY="0.0%" width="100.00%" height="100.00%"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </view>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SwV-8Z-jAL">
@@ -133,16 +140,16 @@
                                                                             <rect key="frame" x="0.0" y="28" width="328" height="100"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nKw-GL-4km" id="REU-3l-pb2">
-                                                                                <frame key="frameInset" width="328" height="99"/>
+                                                                                <frame key="frameInset" width="328" height="100"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bkl-S5-Wlo">
-                                                                                        <frame key="frameInset" minX="1.52%" minY="7.07%" width="96.65%" height="79.80%"/>
+                                                                                        <frame key="frameInset" minX="1.52%" minY="7.00%" width="96.65%" height="79.00%"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     </view>
                                                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOa-D9-L5e">
-                                                                                        <frame key="frameInset" minX="1.83%" minY="7.07%" width="95.43%" height="78.79%"/>
+                                                                                        <frame key="frameInset" minX="1.83%" minY="7.00%" width="95.43%" height="78.00%"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c0T-1G-6Om">
@@ -151,7 +158,7 @@
                                                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             </view>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtO-Th-Z0H">
-                                                                                                <frame key="frameInset" minX="2.56%" minY="8.97%" width="61.34%" height="78.20%"/>
+                                                                                                <frame key="frameInset" minX="2.56%" minY="8.97%" width="61.34%" height="76.92%"/>
                                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                                 <fontDescription key="fontDescription" name="TamilSangamMN-Bold" family="Tamil Sangam MN" pointSize="17"/>
                                                                                                 <nil key="textColor"/>
@@ -220,6 +227,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="amountLabel" destination="f4p-4m-kfN" id="FAt-63-3wv"/>
+                                            <outlet property="barChartView" destination="PTn-l5-Vya" id="8kS-Ws-tgI"/>
                                             <outlet property="categoryContainerLabel" destination="T42-yX-YnK" id="OFz-wz-a1M"/>
                                             <outlet property="containerView" destination="20v-Uf-QZJ" id="RwZ-u3-yOh"/>
                                             <outlet property="containerViewTop" destination="Wot-DE-EXR" id="dLk-BC-CJw"/>
@@ -239,7 +247,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Report" id="MqI-h9-vVy">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="TO3-7v-XAD"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="TO3-7v-XAD">
+                            <connections>
+                                <action selector="saveReport:" destination="GBA-aQ-4IC" id="VMO-ID-vK2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="qnu-pj-Nlc" id="ftD-KZ-TVM"/>
@@ -280,11 +292,11 @@
                                 <color key="backgroundColor" red="0.35579097009999999" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVd-nt-S5k" customClass="PieChartView" customModule="Charts">
-                                <frame key="frameInset" minX="2.40%" minY="34.48%" width="65.87%" height="35.98%"/>
+                                <frame key="frameInset" minX="2.40%" minY="34.18%" width="65.87%" height="35.98%"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1f6-yt-AwQ">
-                                <frame key="frameInset" minX="2.40%" minY="72.71%" width="95.47%" height="15.74%"/>
+                                <frame key="frameInset" minX="2.40%" minY="72.41%" width="95.47%" height="15.74%"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90041002064032893" green="0.9484811173429839" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -312,7 +324,7 @@
                                 <color key="backgroundColor" red="0.35579097009999999" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zV-oW-fsr">
-                                <frame key="frameInset" minX="70.40%" minY="36.73%" width="27.47%" height="34.78%"/>
+                                <frame key="frameInset" minX="70.40%" minY="36.43%" width="27.47%" height="34.78%"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vegetables" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MR7-ni-TIY">
@@ -385,7 +397,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XEx-l7-fii" id="Jwq-5U-fou">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -393,18 +405,18 @@
                                 <rect key="frame" x="0.0" y="116" width="375" height="251"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Df9-a5-rlU" id="hkN-vc-wJd">
-                                    <frame key="frameInset" width="375" height="250"/>
+                                    <frame key="frameInset" width="375" height="251"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Not Logged In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf1-iA-fa1">
-                                            <frame key="frameInset" minX="0.0%" minY="64.00%" width="95.47%" height="24.40%"/>
+                                            <frame key="frameInset" minX="0.0%" minY="63.75%" width="95.47%" height="23.90%"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ily-jF-F1V">
-                                            <frame key="frameInset" minX="47.65%" minY="35.71%" width="98" height="96"/>
+                                            <frame key="frameInset" minX="47.65%" minY="35.48%" width="98" height="96"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.49194235268325981" green="0.51163166326258813" blue="0.53123027146464641" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
@@ -443,7 +455,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KOJ-tT-DIK">
-                                <frame key="frameInset" minX="15.47%" minY="14.69%" width="68.53%" height="35.68%"/>
+                                <frame key="frameInset" minX="15.47%" minY="14.39%" width="68.53%" height="35.68%"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TmZ-CI-MYV">
@@ -532,7 +544,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="faZ-xH-ZfL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NWK-7C-l7L">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NWK-7C-l7L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
