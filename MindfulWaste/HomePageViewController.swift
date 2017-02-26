@@ -57,6 +57,11 @@ class HomePageViewController : UIViewController, SideMenuControllerDelegate
         })
     }
     
+    
+    @IBAction func showLiveFeed(_ sender: AnyObject) {
+        sideMenuController?.performSegue(withIdentifier: "showLiveFeed", sender: nil)
+    }
+    
     public func sideMenuControllerDidHide(_ sideMenuController: SideMenuController) {
         print(#function)
         

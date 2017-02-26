@@ -43,6 +43,10 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         sideMenuController?.performSegue(withIdentifier: "showCenterController1", sender: nil)
     }
     
+    @IBAction func showLiveFeed(_ sender: AnyObject) {
+        sideMenuController?.performSegue(withIdentifier: "showLiveFeed", sender: nil)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }

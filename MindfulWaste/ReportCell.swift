@@ -70,11 +70,11 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0
         {
-            return 70
+            return 50
         }
         else
         {
-            return 100
+            return 75
         }
     }
     
@@ -85,6 +85,7 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
         {
             cell.details.text = descriptions[indexPath.row-1]
             cell.amount.text = "\(amountValues[indexPath.row-1])"
+            cell.amount.isEnabled = true
         }
         else
         {
