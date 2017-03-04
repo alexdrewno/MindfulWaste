@@ -48,6 +48,7 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
         var randoColors = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.lightGray, UIColor.orange]
         var colors : [UIColor] = []
         for i in 0..<descriptions.count {
+            print("amount", amountValues)
             let dataEntry = BarChartDataEntry(x: Double(i), y: Double(amountValues[i]))
             dataEntries.append(dataEntry)
             colors.append(randoColors[Int(arc4random() % 5)])
