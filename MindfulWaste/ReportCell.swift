@@ -1,6 +1,7 @@
 import UIKit
 import FoldingCell
 import Charts
+import KDCircularProgress
 
 protocol FoldingCellDelegate {
     func updateInfo(groupName: String, array: [CGFloat])
@@ -17,18 +18,20 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
     @IBOutlet var topView: UIView!
     @IBOutlet var categoryContainerLabel: UILabel!
     @IBOutlet var insideTableView: UITableView!
+    @IBOutlet weak var targetGoalLabel: UILabel!
+    var goal : CGFloat = 100
+    var amount : CGFloat = 0
     var color : UIColor = UIColor.white
     var descriptions = [""]
     var amountValues: [CGFloat] = [0]
     var delegate : FoldingCellDelegate? = nil
-    @IBOutlet var barChartView: BarChartView!
+    @IBOutlet weak var progressCircle: KDCircularProgress!
   
     
     
     
     override func awakeFromNib() {
         insideTableView.separatorStyle = .singleLineEtched
-        insideTableView.backgroundColor = UIColor.clear
         itemCount = 4
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
@@ -39,16 +42,41 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
         insideTableView.dataSource = self
         insideTableView.allowsSelection = false
         insideTableView.backgroundColor = UIColor.clear
-        barChartView.drawGridBackgroundEnabled = false
         super.awakeFromNib()
+        if amountValues.count == 1
+        {
+            amountValues = [CGFloat](repeating: 0.0, count: descriptions.count)
+        }
+    }
+    
+    func updateCircularProgress()
+    {
+        progressCircle.startAngle = -90
+        progressCircle.progressThickness = 0.3
+        progressCircle.trackThickness = 0.5
+        progressCircle.clockwise = true
+        progressCircle.gradientRotateSpeed = 2
+        progressCircle.roundedCorners = true
+        progressCircle.glowMode = .forward
+        progressCircle.glowAmount = 0.9
+        print(amount,"amount")
+        if amount/goal >= 1.0
+        {
+            progressCircle.angle = 360
+        }
+        else
+        {
+            progressCircle.angle = Double(( amount / goal ) * 360)
+        }
     }
     
     func updateChartWithData() {
         var dataEntries: [BarChartDataEntry] = []
         var randoColors = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.lightGray, UIColor.orange]
         var colors : [UIColor] = []
+        
         for i in 0..<descriptions.count {
-            print("amount", amountValues)
+
             let dataEntry = BarChartDataEntry(x: Double(i), y: Double(amountValues[i]))
             dataEntries.append(dataEntry)
             colors.append(randoColors[Int(arc4random() % 5)])
@@ -58,7 +86,7 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Details")
         chartDataSet.colors = colors
         let chartData = BarChartData(dataSet: chartDataSet)
-        barChartView.data = chartData
+        //barChartView.data = chartData
     }
 
     
@@ -82,6 +110,10 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = insideTableView.dequeueReusableCell(withIdentifier: "detailedReportCell") as! DetailedReportCell
         cell.cellView.backgroundColor = color
+        if amountValues.count == 1
+        {
+            amountValues = [CGFloat](repeating: 0.0, count: descriptions.count)
+        }
         if indexPath.row > 0
         {
             cell.details.text = descriptions[indexPath.row-1]
@@ -99,7 +131,6 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
     @IBAction func editingFinished(_ sender: AnyObject)
     {
         //delegate?.finishedEditing()
-        updateChartWithData()
     }
     
     @IBAction func editingChanged(_ sender: AnyObject) {

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FED484381EC0EF24DE78CC5BD0DD1619'
-               BlueprintName = 'SideMenuController'
+               BlueprintIdentifier = '322428ECC8C5EC71F14C92233787C7AC'
+               BlueprintName = 'KDCircularProgress'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SideMenuController.framework'>
+               BuildableName = 'KDCircularProgress.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

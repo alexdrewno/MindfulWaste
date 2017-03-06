@@ -22,6 +22,7 @@
 		3FF422E21DF7853E001D2874 /* MindfulWasteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422E11DF7853E001D2874 /* MindfulWasteTests.swift */; };
 		3FF422ED1DF7853E001D2874 /* MindfulWasteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422EC1DF7853E001D2874 /* MindfulWasteUITests.swift */; };
 		3FF772211E32811000F2B6E0 /* DetailedReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF772201E32811000F2B6E0 /* DetailedReportCell.swift */; };
+		9535CDFD1E6D07C500F30BB1 /* ReportInfographic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535CDFC1E6D07C500F30BB1 /* ReportInfographic.swift */; };
 		953B2AAE1E05EA3400649F55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */; };
 		953B2AAF1E05EA3400649F55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */; };
 		953B2AB01E05EA3400649F55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */; };
@@ -77,6 +78,7 @@
 		40F16CB367FFF2D958C24AAE /* Pods_MindfulWaste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindfulWaste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		485471B5AE89AD167B65516F /* Pods-MindfulWasteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWasteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWasteUITests/Pods-MindfulWasteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		86BC002B4748BBB436553EB1 /* Pods-MindfulWaste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWaste.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste.release.xcconfig"; sourceTree = "<group>"; };
+		9535CDFC1E6D07C500F30BB1 /* ReportInfographic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportInfographic.swift; sourceTree = "<group>"; };
 		953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9554EB4A1E076B0E00771CC6 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		956F3A4E1E077A0E006EDE6A /* CustomCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				3FE5EAAC1E608F040004A77C /* LiveFeedViewController.swift */,
 				3F67B0B11E291304004819B7 /* ReportCell.swift */,
 				3FF772201E32811000F2B6E0 /* DetailedReportCell.swift */,
+				9535CDFC1E6D07C500F30BB1 /* ReportInfographic.swift */,
 			);
 			name = ReportFiles;
 			sourceTree = "<group>";
@@ -441,7 +444,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A39D49BFA6F424A33FA3335C /* [CP] Check Pods Manifest.lock */ = {
@@ -456,7 +459,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BC95B8468A0080E829AE3E96 /* [CP] Embed Pods Frameworks */ = {
@@ -486,7 +489,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F6F60807FCE9A576737F1D8E /* [CP] Embed Pods Frameworks */ = {
@@ -515,6 +518,7 @@
 				3FF772211E32811000F2B6E0 /* DetailedReportCell.swift in Sources */,
 				3FE5EAAD1E608F040004A77C /* LiveFeedViewController.swift in Sources */,
 				3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */,
+				9535CDFD1E6D07C500F30BB1 /* ReportInfographic.swift in Sources */,
 				3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */,
 				3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */,
 				956F3A4F1E077A0E006EDE6A /* CustomCollectionCell.swift in Sources */,

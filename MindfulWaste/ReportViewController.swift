@@ -48,7 +48,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return 5
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -58,17 +58,38 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reportCell", for: indexPath) as! ReportCell
         
+        print("UPDATING")
+        
         cell.foregroundView.backgroundColor = colors[indexPath.row]
         cell.leftView.backgroundColor = colors[indexPath.row].darker(by: 20.0)
         cell.amountLabel.backgroundColor = colors[indexPath.row].darker()
         cell.groupLabel.text = categories[indexPath.row]
         cell.amountLabel.text = "\(amount[indexPath.row]) lbs."
+        cell.amount = amount[indexPath.row]
+        
         cell.containerView.backgroundColor = colors[indexPath.row].lighter(by: 10.0)
         cell.innerContainer.backgroundColor = colors[indexPath.row].lighter(by: 45.0)
+        cell.progressCircle.set(colors: colors[indexPath.row], UIColor.white)
         cell.backViewColor = colors[indexPath.row].darker(by: 45.0)!
         cell.topView.backgroundColor = colors[indexPath.row].darker(by: 20.0)
         cell.categoryContainerLabel.text = categories[indexPath.row]
+
         cell.delegate = self
+        
+        switch indexPath.row{
+        case 0:
+            cell.descriptions = ["Whole Fruit", "Packaged Fruit", "Fruit Juice", "Other Fruit"]
+        case 1:
+            cell.descriptions = ["Vegetables", "Packaged Vegetables", "Vegetable Juice", "Other Vegetables"]
+        case 2:
+            cell.descriptions = ["Misc. Bagged Snacks", "Fruit & Grain Bars", "Crackers", "Raisins", "Dry Cereal", "Granola", "Muffins", "Chips", "Other Dry Goods"]
+        case 3:
+            cell.descriptions = ["Cheese", "Yogurt", "White Milk", "Chocolate Milk", "Strawberry Milk", "Other Dairy"]
+        case 4:
+            cell.descriptions = ["Items such as PB&J, etc."]
+        default:
+            break;
+        }
     
         return cell
     }
@@ -139,26 +160,42 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.amountValues = detailFruitAmount
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[0]) lbs."
+            cell.updateCircularProgress()
+            cell.progressCircle.angle = Double(amount[0]/100.0 * 360.0)
+            print("fruit", cell.progressCircle.angle)
+            
         case 1:
             cell.descriptions =  ["Vegetables", "Packaged Vegetables", "Vegetable Juice", "Other Vegetables"]
             cell.amountValues = detailVegetablesAmount
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[1]) lbs"
+            cell.updateCircularProgress()
+            cell.progressCircle.angle = Double(amount[1]/100.0 * 360.0)
+             print("v", cell.progressCircle.angle)
         case 2:
             cell.descriptions =  ["Misc. Bagged Snacks", "Fruit & Grain Bars", "Crackers", "Raisins", "Dry Cereal", "Granola", "Muffins", "Chips", "Other Dry Goods"]
             cell.amountValues = detailDryGoodsAmount
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[2]) lbs"
+            cell.updateCircularProgress()
+            cell.progressCircle.angle = Double(amount[2]/100.0 * 360.0)
+             print("dg", cell.progressCircle.angle)
         case 3:
             cell.descriptions = ["Cheese", "Yogurt", "White Milk", "Chocolate Milk", "Strawberry Milk", "Other Dairy"]
             cell.amountValues = detailDairyAmount
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[3]) lbs"
+            cell.updateCircularProgress()
+            cell.progressCircle.angle = Double(amount[3]/100.0 * 360.0)
+             print("d", cell.progressCircle.angle)
         case 4:
             cell.descriptions = ["Items such as PB&J, etc."]
             cell.amountValues = detailMiscAmount
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[4]) lbs"
+            cell.updateCircularProgress()
+            cell.progressCircle.angle = Double(amount[4]/100.0 * 360.0)
+             print("m", cell.progressCircle.angle)
         default:
             break;
         }
@@ -176,10 +213,12 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
             duration = 1.1
         }
         
-        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { _ in
+        UIView.animate(withDuration: duration, delay: 0.01, options: .curveEaseOut, animations: { _ in
             tableView.beginUpdates()
             tableView.endUpdates()
-            }, completion: nil)
+        }, completion:  { (bool) in
+            
+        })
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -187,7 +226,6 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         if case let cell as ReportCell = cell {
-            cell.updateChartWithData()
             if cellHeights[indexPath.row] == C.CellHeight.close {
                 cell.selectedAnimation(false, animated: false, completion:nil)
             } else {
@@ -209,6 +247,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 {
                     let groceryItemRef = self.ref.child(alert.textFields![0].text!.lowercased())
                     groceryItemRef.setValue(report.toAnyObject())
+                    self.sideMenuController?.performSegue(withIdentifier: "showInfographic", sender: nil)
                 }
                 
                 

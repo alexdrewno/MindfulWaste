@@ -16,6 +16,7 @@ class HomePageViewController : UIViewController, SideMenuControllerDelegate
     var dryGoodsAmount = 0
     var dairyAmount = 0
     var miscAmount = 0
+    @IBOutlet weak var amountCO2e: UILabel!
     
     override func viewDidLoad() {
         pieChart.backgroundColor = UIColor.clear
@@ -53,6 +54,7 @@ class HomePageViewController : UIViewController, SideMenuControllerDelegate
             self.amountArray[3] = self.dairyAmount
             self.amountArray[4] = self.miscAmount
             self.setPieChart(xVals: self.amountArray, yVals: self.categories)
+            self.amountCO2e.text! = "\(self.amount/5) lbs."
             
         })
     }
@@ -87,10 +89,12 @@ class HomePageViewController : UIViewController, SideMenuControllerDelegate
             }
         }
         
-        let chartDataSet = PieChartDataSet(values: dataEntries, label: "Amount Collected")
+        let chartDataSet = PieChartDataSet(values: dataEntries, label: "Category")
         let chartData = PieChartData(dataSet: chartDataSet)
 
         chartDataSet.colors = setColors
+        pieChart.chartDescription?.text! = ""
+
         let centerText = NSAttributedString(string: "\(amount)", attributes: [ NSFontAttributeName: UIFont(name: "Futura", size: 36)! ])
         pieChart.centerAttributedText = centerText
         pieChart.data = chartData
