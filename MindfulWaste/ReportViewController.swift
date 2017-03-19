@@ -247,7 +247,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 {
                     let groceryItemRef = self.ref.child(alert.textFields![0].text!.lowercased())
                     groceryItemRef.setValue(report.toAnyObject())
-                    self.sideMenuController?.performSegue(withIdentifier: "showInfographic", sender: nil)
+                    //self.sideMenuController?.performSegue(withIdentifier: "showInfographic", sender: nil)
                 }
                 
                 

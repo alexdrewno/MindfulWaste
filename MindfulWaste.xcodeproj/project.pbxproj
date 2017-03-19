@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0BC4F91BC60C493847D3714F /* Pods_MindfulWasteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55D4E938AE4606BAA698DC0 /* Pods_MindfulWasteUITests.framework */; };
 		3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3295B41DFEFF1400612904 /* CustomUserCell.swift */; };
+		3F643A791E6DA469005B44C1 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F643A781E6DA469005B44C1 /* FeedTableViewCell.swift */; };
 		3F67B0B21E291304004819B7 /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67B0B11E291304004819B7 /* ReportCell.swift */; };
 		3F6E7E1E1DFB049700421F54 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E1D1DFB049700421F54 /* MenuController.swift */; };
 		3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */; };
@@ -54,6 +55,7 @@
 		00B447B2BE47E3BAD88B07C2 /* Pods_MindfulWasteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindfulWasteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D915108F249FCC14E432515 /* Pods-MindfulWaste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWaste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste.debug.xcconfig"; sourceTree = "<group>"; };
 		3F3295B41DFEFF1400612904 /* CustomUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUserCell.swift; sourceTree = "<group>"; };
+		3F643A781E6DA469005B44C1 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		3F67B0B11E291304004819B7 /* ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
 		3F6E7E1D1DFB049700421F54 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				956F3A501E078F4E006EDE6A /* Report.swift */,
 				9554EB4A1E076B0E00771CC6 /* ReportViewController.swift */,
 				3FE5EAAC1E608F040004A77C /* LiveFeedViewController.swift */,
+				3F643A781E6DA469005B44C1 /* FeedTableViewCell.swift */,
 				3F67B0B11E291304004819B7 /* ReportCell.swift */,
 				3FF772201E32811000F2B6E0 /* DetailedReportCell.swift */,
 				9535CDFC1E6D07C500F30BB1 /* ReportInfographic.swift */,
@@ -523,6 +526,7 @@
 				3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */,
 				956F3A4F1E077A0E006EDE6A /* CustomCollectionCell.swift in Sources */,
 				956F3A511E078F4E006EDE6A /* Report.swift in Sources */,
+				3F643A791E6DA469005B44C1 /* FeedTableViewCell.swift in Sources */,
 				3F6E7E1E1DFB049700421F54 /* MenuController.swift in Sources */,
 				3FF422CD1DF7853E001D2874 /* AppDelegate.swift in Sources */,
 				9554EB4B1E076B0E00771CC6 /* ReportViewController.swift in Sources */,

@@ -2,9 +2,9 @@ import UIKit
 
 class ReportInfographic : UIViewController
 {
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var scrollView: UIView!
     override func viewDidLoad()
     {
-        scrollView.contentSize.height = 1200
+        
     }
 }

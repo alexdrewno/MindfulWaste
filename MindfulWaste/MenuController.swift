@@ -9,7 +9,7 @@ class MenuController: UITableViewController {
     
 
     //reports, new report, organization(s)?
-    let array = ["New Report", "Cell number 2", "Cell number 3"]
+    let array = ["New Report", "", ""]
     
     override func viewDidLoad()
     {
@@ -76,7 +76,7 @@ class MenuController: UITableViewController {
         }
         else
         {
-            return 3
+            return 1
         }
     }
 
