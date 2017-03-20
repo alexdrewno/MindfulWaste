@@ -247,12 +247,46 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 {
                     let groceryItemRef = self.ref.child(alert.textFields![0].text!.lowercased())
                     groceryItemRef.setValue(report.toAnyObject())
-                    //self.sideMenuController?.performSegue(withIdentifier: "showInfographic", sender: nil)
+                   // self.sideMenuController?.performSegue(withIdentifier: "showInfographic", sender: nil)
+                }
+                else
+                {
+                    let alert2 = UIAlertController(title: "Error", message: "Please type in a unique report name.", preferredStyle: .alert)
+                    alert2.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
+                        self.present(alert,animated: false)
+                    }))
                 }
                 
                 
             }))
             present(alert, animated: false, completion: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showInfographic"
+        {
+//            print("called")
+//            let dvc = segue.destination as! ReportInfographic
+//            dvc.amountArray = amount as! [CGFloat]
+//            var highest: CGFloat = 0
+//            var total : CGFloat = 0
+//            var indexOfHighest : Int = 0
+//            for i in 0...amount.count
+//            {
+//                if amount[i] > highest
+//                {
+//                    highest = amount[i]
+//                }
+//                
+//                total += amount[i]
+//                
+//            }
+//            
+//            dvc.totalAmountLabel.text = "\(total)"
+//            dvc.mostAmountLabel.text = "\(highest)"
+//            dvc.mostAmountCategoryLabel.text = "\(categories[indexOfHighest])"
+//            
         }
     }
 

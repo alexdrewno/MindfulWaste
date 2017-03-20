@@ -38,7 +38,7 @@ class HomePageViewController : UIViewController, SideMenuControllerDelegate
             for child in snapshot.children
             {
                 let dict = (child as! FIRDataSnapshot).value as! NSDictionary
-                self.dairyAmount += (dict["dairyInformation"] as! NSDictionary)["dairyAmount"]! as! Int
+                self.dairyAmount += (dict["dairyInformation"] as! NSDictionary)["dairyAmount"]! as! NSNumber as! Int
                 self.fruitsAmount += (dict["fruitInformation"] as! NSDictionary)["fruitAmount"]! as! Int
                 self.vegetablesAmount += (dict["vegetableInformation"] as! NSDictionary)["vegetableAmount"]! as! Int
                 self.dryGoodsAmount += (dict["dryGoodsInformation"] as! NSDictionary)["dryGoodsAmount"]! as! Int
