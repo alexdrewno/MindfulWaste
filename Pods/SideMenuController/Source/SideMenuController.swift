@@ -167,6 +167,8 @@ open class SideMenuController: UIViewController, UIGestureRecognizerDelegate {
         setUpViewHierarchy()
     }
     
+    
+    
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setUpViewHierarchy()

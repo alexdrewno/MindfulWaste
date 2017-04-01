@@ -27,6 +27,8 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let kOpenCellHeight: CGFloat = 493
     var cellHeights : [CGFloat] = []
     var descriptions : [[String]] = []
+    let defaults = UserDefaults()
+
     
     
     override func viewDidLoad()
@@ -247,7 +249,8 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 {
                     let groceryItemRef = self.ref.child(alert.textFields![0].text!.lowercased())
                     groceryItemRef.setValue(report.toAnyObject())
-                   // self.sideMenuController?.performSegue(withIdentifier: "showInfographic", sender: nil)
+                    self.defaults.set(report.toAnyObject() as! NSDictionary, forKey: "mostRecentReportName")
+                    self.sideMenuController?.performSegue(withIdentifier: "showInfographic", sender: nil)
                 }
                 else
                 {
@@ -264,29 +267,29 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        print(segue.identifier)
         if segue.identifier == "showInfographic"
         {
-//            print("called")
-//            let dvc = segue.destination as! ReportInfographic
-//            dvc.amountArray = amount as! [CGFloat]
-//            var highest: CGFloat = 0
-//            var total : CGFloat = 0
-//            var indexOfHighest : Int = 0
-//            for i in 0...amount.count
-//            {
-//                if amount[i] > highest
-//                {
-//                    highest = amount[i]
-//                }
-//                
-//                total += amount[i]
-//                
-//            }
-//            
-//            dvc.totalAmountLabel.text = "\(total)"
-//            dvc.mostAmountLabel.text = "\(highest)"
-//            dvc.mostAmountCategoryLabel.text = "\(categories[indexOfHighest])"
-//            
+            let dvc = segue.destination as! ReportInfographic
+            dvc.amountArray = amount
+            var highest: CGFloat = 0
+            var total : CGFloat = 0
+            var indexOfHighest : Int = 0
+            for i in 0...amount.count
+            {
+                if amount[i] > highest
+                {
+                    highest = amount[i]
+                }
+                
+                total += amount[i]
+                
+            }
+            
+            dvc.totalAmountLabel.text = "\(total)"
+            dvc.mostAmountLabel.text = "\(highest)"
+            dvc.mostAmountCategoryLabel.text = "\(categories[indexOfHighest])"
         }
     }
 

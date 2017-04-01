@@ -1,5 +1,6 @@
 import UIKit
 import Charts
+import FirebaseDatabase
 
 class ReportInfographic : UIViewController
 {
@@ -11,13 +12,34 @@ class ReportInfographic : UIViewController
     @IBOutlet weak var mostAmountCategoryLabel: UILabel!
     let categories = ["Fruits", "Vegetables", "Dry Goods", "Dairy", "Misc."]
     var amountArray : [CGFloat] = [0.0,0.0,0.0,0.0,0.0]
+    var defaults = UserDefaults()
+    var information : NSDictionary? = nil
+    var amount : [CGFloat] = []
     
     
     override func viewDidLoad()
     {
         self.automaticallyAdjustsScrollViewInsets = false
         pieChartView.highlightPerTapEnabled = false
-        setPieChart(xVals: [10,20,10,10,10], yVals: categories)
+        if let info = defaults.value(forKey: "mostRecentReportName")
+        {
+            information = info as! NSDictionary
+            amount.append((information?["fruitInformation"] as! NSDictionary)["fruitAmount"] as! CGFloat)
+            amount.append((information?["vegetableInformation"] as! NSDictionary)["vegetableAmount"] as! CGFloat)
+            amount.append((information?["dryGoodsInformation"] as! NSDictionary)["dryGoodsAmount"] as! CGFloat)
+            amount.append((information?["dairyInformation"] as! NSDictionary)["dairyAmount"] as! CGFloat)
+            amount.append((information?["miscInformation"] as! NSDictionary)["miscAmount"] as! CGFloat)
+        }
+        setPieChart(xVals: amount, yVals: categories)
+        var total : CGFloat = 0
+        for a in amount
+        {
+            total += a
+        }
+        
+        totalAmountLabel.text! = "\(Int(total))"
+        mealsSavedLabel.text! = "\(total/5)"
+        
     }
     
     func setPieChart(xVals: [CGFloat], yVals: [String])
