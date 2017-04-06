@@ -16,11 +16,17 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let categories = ["Fruits", "Vegetables", "Dry Goods", "Dairy", "Misc."]
     let colors = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.lightGray, UIColor.orange]
     var amount : [CGFloat] = [0,0,0,0,0]
+    var number : [CGFloat] = [0,0,0,0,0]
     var detailFruitAmount : [CGFloat] = [0,0,0,0]
     var detailVegetablesAmount : [CGFloat] = [0,0,0,0]
     var detailDryGoodsAmount : [CGFloat] = [0,0,0,0,0,0,0,0,0]
     var detailDairyAmount : [CGFloat] = [0,0,0,0,0,0]
     var detailMiscAmount : [CGFloat] = [0]
+    var detailFruitNumber : [CGFloat] = [0,0,0,0]
+    var detailVegetablesNumber : [CGFloat] = [0,0,0,0]
+    var detailDryGoodsNumber : [CGFloat] = [0,0,0,0,0,0,0,0,0]
+    var detailDairyNumber : [CGFloat] = [0,0,0,0,0,0]
+    var detailMiscNumber : [CGFloat] = [0]
     let ref = FIRDatabase.database().reference(withPath: "reports")
     @IBOutlet var tableView: UITableView!
     let kCloseCellHeight: CGFloat = 179
@@ -146,6 +152,56 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    func updateNumber(groupName: String, array : [CGFloat])
+    {
+        switch groupName{
+            
+        case "Fruits":
+            detailFruitNumber = array
+            print("fruit", detailFruitNumber)
+            number[0] = 0
+            for num in detailFruitNumber
+            {
+                number[0] += num
+            }
+        case "Vegetables":
+            detailVegetablesNumber = array
+            print("vegatables", detailVegetablesNumber)
+            number[1] = 0
+            for num in detailVegetablesNumber
+            {
+                number[1] += num
+            }
+        case "Dry Goods":
+            detailDryGoodsNumber = array
+            print("Dry Goods", detailDryGoodsNumber)
+            number[2] = 0
+            for num in detailDryGoodsNumber
+            {
+                number[2] += num
+            }
+        case "Dairy":
+            detailDairyNumber = array
+            print("Dairy", detailDairyNumber)
+            number[3] = 0
+            for num in detailDairyNumber
+            {
+                number[3] += num
+            }
+        case "Misc.":
+            detailMiscNumber = array
+            print("Misc.", detailMiscNumber)
+            number[4] = 0
+            for num in detailMiscNumber
+            {
+                number[4] += num
+            }
+        default:
+            break
+            
+        }
+    }
+    
     func finishedEditing() {
         self.tableView.reloadData()
     }
@@ -160,6 +216,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case 0:
             cell.descriptions = ["Whole Fruit", "Packaged Fruit", "Fruit Juice", "Other Fruit"]
             cell.amountValues = detailFruitAmount
+            cell.numberValues = detailFruitNumber
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[0]) lbs."
             cell.updateCircularProgress()
@@ -169,6 +226,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case 1:
             cell.descriptions =  ["Vegetables", "Packaged Vegetables", "Vegetable Juice", "Other Vegetables"]
             cell.amountValues = detailVegetablesAmount
+            cell.numberValues = detailVegetablesNumber
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[1]) lbs"
             cell.updateCircularProgress()
@@ -177,6 +235,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case 2:
             cell.descriptions =  ["Misc. Bagged Snacks", "Fruit & Grain Bars", "Crackers", "Raisins", "Dry Cereal", "Granola", "Muffins", "Chips", "Other Dry Goods"]
             cell.amountValues = detailDryGoodsAmount
+            cell.numberValues = detailDryGoodsNumber
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[2]) lbs"
             cell.updateCircularProgress()
@@ -185,6 +244,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case 3:
             cell.descriptions = ["Cheese", "Yogurt", "White Milk", "Chocolate Milk", "Strawberry Milk", "Other Dairy"]
             cell.amountValues = detailDairyAmount
+            cell.amountValues = detailDairyNumber
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[3]) lbs"
             cell.updateCircularProgress()
@@ -193,6 +253,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case 4:
             cell.descriptions = ["Items such as PB&J, etc."]
             cell.amountValues = detailMiscAmount
+            cell.amountValues = detailMiscNumber
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[4]) lbs"
             cell.updateCircularProgress()
@@ -244,7 +305,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addTextField(configurationHandler: nil)
             alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (_:UIAlertAction) in
-                let report = Report(name: alert.textFields![0].text!, amount: self.amount, f: self.detailFruitAmount, v: self.detailVegetablesAmount, dg: self.detailDryGoodsAmount, d: self.detailDairyAmount, m: self.detailMiscAmount, user: FIRAuth.auth()!.currentUser!.email!)
+                let report = Report(name: alert.textFields![0].text!, amount: self.amount, number: self.number, f: self.detailFruitAmount, v: self.detailVegetablesAmount, dg: self.detailDryGoodsAmount, d: self.detailDairyAmount, m: self.detailMiscAmount, user: FIRAuth.auth()!.currentUser!.email!)
                 if alert.textFields![0].hasText
                 {
                     let groceryItemRef = self.ref.child(alert.textFields![0].text!.lowercased())

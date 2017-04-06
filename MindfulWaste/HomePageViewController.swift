@@ -38,11 +38,25 @@ class HomePageViewController : UIViewController, SideMenuControllerDelegate
             for child in snapshot.children
             {
                 let dict = (child as! FIRDataSnapshot).value as! NSDictionary
-                self.dairyAmount += (dict["dairyInformation"] as! NSDictionary)["dairyAmount"]! as! NSNumber as! Int
-                self.fruitsAmount += (dict["fruitInformation"] as! NSDictionary)["fruitAmount"]! as! Int
-                self.vegetablesAmount += (dict["vegetableInformation"] as! NSDictionary)["vegetableAmount"]! as! Int
-                self.dryGoodsAmount += (dict["dryGoodsInformation"] as! NSDictionary)["dryGoodsAmount"]! as! Int
-                self.miscAmount += (dict["miscInformation"] as! NSDictionary)["miscAmount"]! as! Int
+                if let num = (dict["dairyInformation"] as! NSDictionary)["dairyAmount"]! as? Int
+                {
+                    self.dairyAmount += num
+                }
+                if let num = (dict["fruitInformation"] as! NSDictionary)["fruitAmount"]! as? Int                {
+                    self.fruitsAmount += num
+                }
+                if let num = (dict["vegetableInformation"] as! NSDictionary)["vegetableAmount"]! as? Int
+                {
+                    self.vegetablesAmount += num
+                }
+                if let num = (dict["dryGoodsInformation"] as! NSDictionary)["dryGoodsAmount"]! as?Int                {
+                    self.dryGoodsAmount += num
+                }
+                if let num = (dict["miscInformation"] as! NSDictionary)["miscAmount"]! as? Int
+
+                {
+                    self.miscAmount += num
+                }
                 self.amount = self.dairyAmount + self.fruitsAmount + self.vegetablesAmount + self.miscAmount + self.dryGoodsAmount
                 print(self.amount)
             }

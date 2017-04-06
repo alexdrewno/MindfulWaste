@@ -5,13 +5,14 @@ class Report: NSObject
     var name = ""
     
     var amount : [CGFloat] = [0,0,0,0,0]
+    var number : [CGFloat] = [0]
     var detailFruitAmount : [CGFloat] = [0,0,0,0]
     var detailVegetablesAmount : [CGFloat] = [0,0,0,0]
     var detailDryGoodsAmount : [CGFloat] = [0,0,0,0,0,0,0,0,0]
     var detailDairyAmount : [CGFloat] = [0,0,0,0,0,0]
     var detailMiscAmount : [CGFloat] = [0]
     
-    init(name:String, amount:[CGFloat], f:[CGFloat], v:[CGFloat], dg:[CGFloat], d:[CGFloat], m:[CGFloat], user: String)
+    init(name:String, amount:[CGFloat], number:[CGFloat], f:[CGFloat], v:[CGFloat], dg:[CGFloat], d:[CGFloat], m:[CGFloat], user: String)
     {
         self.user = user
         self.name = name
@@ -22,6 +23,7 @@ class Report: NSObject
         self.detailDairyAmount = d
         self.detailMiscAmount = m
         self.amount = amount
+        self.number = number
         
     }
     
@@ -33,6 +35,7 @@ class Report: NSObject
             "addedByUser": user,
             "fruitInformation" : [
                 "fruitAmount" : amount[0],
+                "fruitNumber" : number[0],
                 "wholeFruit" : detailFruitAmount[0],
                 "packagedFruit" : detailFruitAmount[1],
                 "fruitJuice": detailFruitAmount[2],
@@ -40,6 +43,7 @@ class Report: NSObject
             ],
             "vegetableInformation": [
                 "vegetableAmount" : amount[1],
+                "vegetableNumber" : number[1],
                 "vegetable" : detailVegetablesAmount[0],
                 "packagedVegetables" : detailVegetablesAmount[1],
                 "vegetableJuice" : detailVegetablesAmount[2],
@@ -47,6 +51,7 @@ class Report: NSObject
             ],
             "dryGoodsInformation" : [
                 "dryGoodsAmount" : amount[2],
+                "dryGoodsNumber" : number[2],
                 "miscBaggedSnacks" : detailDryGoodsAmount[0],
                 "fruitAndGrainBars" : detailDryGoodsAmount[1],
                 "crackers" : detailDryGoodsAmount[2],
@@ -59,6 +64,7 @@ class Report: NSObject
             ],
             "dairyInformation" : [
                 "dairyAmount" : amount[3],
+                "dairyNumber" : number[3],
                 "cheese" : detailDairyAmount[0],
                 "yogurt" : detailDairyAmount[1],
                 "whiteMilk" : detailDairyAmount[2],
@@ -67,7 +73,8 @@ class Report: NSObject
                 "otherDairy" : detailDairyAmount[5]
             ],
             "miscInformation" : [
-                "miscAmount" : amount[4]
+                "miscAmount" : amount[4],
+                "miscNumber" : number[4]
             ]
         ]
         

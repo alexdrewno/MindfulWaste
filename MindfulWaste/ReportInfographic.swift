@@ -72,5 +72,11 @@ class ReportInfographic : UIViewController
         
         pieChartView.data = chartData
     }
+    
+    @IBAction func finished(_ sender: Any)
+    {
+        sideMenuController?.performSegue(withIdentifier: "showCenterController1", sender: nil)
+    }
+    
 
 }

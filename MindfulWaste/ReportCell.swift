@@ -6,6 +6,7 @@ import KDCircularProgress
 protocol FoldingCellDelegate {
     func updateInfo(groupName: String, array: [CGFloat])
     func finishedEditing()
+    func updateNumber(groupName: String, array: [CGFloat])
 }
 
 class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
@@ -24,6 +25,7 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
     var color : UIColor = UIColor.white
     var descriptions = [""]
     var amountValues: [CGFloat] = [0]
+    var numberValues: [CGFloat] = [0]
     var delegate : FoldingCellDelegate? = nil
     @IBOutlet weak var progressCircle: KDCircularProgress!
   
@@ -46,6 +48,10 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
         if amountValues.count == 1
         {
             amountValues = [CGFloat](repeating: 0.0, count: descriptions.count)
+        }
+        if numberValues.count == 1
+        {
+            numberValues = [CGFloat](repeating: 0.0, count: descriptions.count)
         }
     }
     
@@ -113,11 +119,13 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
         if amountValues.count == 1
         {
             amountValues = [CGFloat](repeating: 0.0, count: descriptions.count)
+            numberValues = [CGFloat](repeating: 0.0, count: descriptions.count)
         }
         if indexPath.row > 0
         {
             cell.details.text = descriptions[indexPath.row-1]
             cell.amount.text = "\(amountValues[indexPath.row-1])"
+            cell.number.text = "\(numberValues[indexPath.row-1])"
             cell.amount.isEnabled = true
         }
         else
@@ -144,8 +152,8 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
                 let indexPath = insideTableView.indexPath(for: superview)!
                 let cell = (insideTableView.cellForRow(at: indexPath) as! DetailedReportCell)
                 cell.amount.keyboardType = .numberPad
-                amountValues[indexPath.row-1] = CGFloat(((insideTableView.cellForRow(at: indexPath) as! DetailedReportCell).amount.text! as! NSString).doubleValue)
-                
+                amountValues[indexPath.row-1] = CGFloat(((insideTableView.cellForRow(at: indexPath) as! DetailedReportCell).amount.text! as NSString).doubleValue)
+                numberValues[indexPath.row-1] = CGFloat(((insideTableView.cellForRow(at: indexPath) as! DetailedReportCell).number.text! as NSString).doubleValue)
                 print(amountValues)
                 
                 //save the amount to the rootviewcontroller lmao
@@ -154,15 +162,19 @@ class ReportCell: FoldingCell, UITableViewDelegate, UITableViewDataSource
                 {
                 case "Fruits":
                     delegate?.updateInfo(groupName: "Fruits", array: amountValues)
-                    print("updateFruits")
+                    delegate?.updateNumber(groupName: "Fruits", array: numberValues)
                 case "Vegetables":
                     delegate?.updateInfo(groupName: "Vegetables", array: amountValues)
+                    delegate?.updateNumber(groupName: "Vegetables", array: numberValues)
                 case "Dry Goods":
                     delegate?.updateInfo(groupName: "Dry Goods", array: amountValues)
+                    delegate?.updateNumber(groupName: "Dry Goods", array: numberValues)
                 case "Dairy":
                     delegate?.updateInfo(groupName: "Dairy", array: amountValues)
+                    delegate?.updateNumber(groupName: "Dairy", array: numberValues)
                 case "Misc.":
                     delegate?.updateInfo(groupName: "Misc.", array: amountValues)
+                    delegate?.updateNumber(groupName: "Misc", array: numberValues)
                 default:
                     break
                 }
