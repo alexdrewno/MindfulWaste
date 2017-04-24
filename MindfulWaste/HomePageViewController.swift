@@ -3,8 +3,10 @@ import SideMenuController
 import Charts
 import FirebaseDatabase
 
-class HomePageViewController : UIViewController, SideMenuControllerDelegate
+class HomePageViewController : UIViewController
 {
+
+
     @IBOutlet weak var pieChart: PieChartView!
     let categories = ["Fruits", "Vegetables", "Dry Goods", "Dairy", "Misc."]
     var amountArray = [0,0,0,0,0]
@@ -21,7 +23,6 @@ class HomePageViewController : UIViewController, SideMenuControllerDelegate
     override func viewDidLoad() {
         pieChart.backgroundColor = UIColor.clear
         pieChart.animate(xAxisDuration: 1)
-        sideMenuController?.delegate = self
         let ref = FIRDatabase.database().reference(withPath: "reports")
         ref.observe(.value, with: { snapshot in
    
@@ -78,14 +79,6 @@ class HomePageViewController : UIViewController, SideMenuControllerDelegate
         sideMenuController?.performSegue(withIdentifier: "showLiveFeed", sender: nil)
     }
     
-    public func sideMenuControllerDidHide(_ sideMenuController: SideMenuController) {
-        print(#function)
-        
-    }
-    
-    func sideMenuControllerDidReveal(_ sideMenuController: SideMenuController) {
-        print(#function)
-    }
     
     func setPieChart(xVals: [Int], yVals: [String])
     {
