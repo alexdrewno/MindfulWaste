@@ -59,10 +59,10 @@ class LoginMainViewController: UIViewController, TextFieldDelegate
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         
-        FIRAuth.auth()?.signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user: FIRUser?, error: Error?) in
+        Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user: User?, error: Error?) in
             if error == nil
             {
-                FIRAuth.auth()?.signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user: FIRUser?, error: Error?) in
+                Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user: User?, error: Error?) in
                     self.performSegue(withIdentifier: "beginningSegue2", sender: nil)
                 })
             }

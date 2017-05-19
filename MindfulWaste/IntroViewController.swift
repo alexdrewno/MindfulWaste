@@ -9,14 +9,13 @@ class IntroViewController: UIViewController
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if FIRAuth.auth()?.currentUser != nil
+        print(Auth.auth().currentUser)
+        if Auth.auth().currentUser != nil
         {
             performSegue(withIdentifier: "skipLogin", sender: nil)
-            print(1)
         }
         else{
             performSegue(withIdentifier: "firstSegue", sender: nil)
-            print(2)
         }
     }
 }

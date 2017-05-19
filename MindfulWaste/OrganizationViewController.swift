@@ -1,5 +1,6 @@
 import UIKit
 import expanding_collection
+import SideMenuController
 
 class OrganizationViewController : ExpandingViewController
 {
@@ -13,6 +14,7 @@ class OrganizationViewController : ExpandingViewController
         let nib = UINib(nibName: "OrganizationReportCell", bundle: nil)
         collectionView!.register(nib, forCellWithReuseIdentifier: "expandingCell")
         fillCellIsOpenArray()
+        addGestureToView(self.view)
     }
     
     fileprivate func fillCellIsOpenArray() {
@@ -82,6 +84,49 @@ class OrganizationViewController : ExpandingViewController
         
     }
     
+    @IBAction func showFeed(_ sender: Any) {
+        sideMenuController?.performSegue(withIdentifier: "showCenterController1", sender: nil)
+    }
+    
+    @IBAction func showHome(_ sender: Any) {
+        sideMenuController?.performSegue(withIdentifier: "showLiveFeed", sender: nil)
+    }
+    
+
+}
+
+internal func Init<Type>(_ value : Type, block: (_ object: Type) -> Void) -> Type
+{
+    block(value)
+    return value
+}
+
+extension OrganizationViewController {
+    
+    fileprivate func addGestureToView(_ toView: UIView) {
+        let gesutereUp = Init(UISwipeGestureRecognizer(target: self, action: #selector(OrganizationViewController.swipeHandler(_:)))) {
+            $0.direction = .up
+        }
+        
+        let gesutereDown = Init(UISwipeGestureRecognizer(target: self, action: #selector(OrganizationViewController.swipeHandler(_:)))) {
+            $0.direction = .down
+        }
+        toView.addGestureRecognizer(gesutereUp)
+        toView.addGestureRecognizer(gesutereDown)
+    }
+    
+    func swipeHandler(_ sender: UISwipeGestureRecognizer) {
+        let indexPath = IndexPath(row: currentIndex, section: 0)
+        guard let cell  = collectionView?.cellForItem(at: indexPath) as? OrganizationReportCell else { return }
+        // double swipe Up transition
+        if cell.isOpened == true && sender.direction == .up {
+            pushToViewController(getViewController())
+        }
+        
+        let open = sender.direction == .up ? true : false
+        cell.cellIsOpen(open)
+        cellsIsOpen[(indexPath as NSIndexPath).row] = cell.isOpened
+    }
 }
 
 

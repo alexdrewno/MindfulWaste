@@ -27,7 +27,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var detailDryGoodsNumber : [CGFloat] = [0,0,0,0,0,0,0,0,0]
     var detailDairyNumber : [CGFloat] = [0,0,0,0,0,0]
     var detailMiscNumber : [CGFloat] = [0]
-    let ref = FIRDatabase.database().reference(withPath: "reports")
+    let ref = Database.database().reference(withPath: "reports")
     @IBOutlet var tableView: UITableView!
     let kCloseCellHeight: CGFloat = 179
     let kOpenCellHeight: CGFloat = 493
@@ -299,13 +299,13 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBAction func saveReport(_ sender: AnyObject) {
         
-        if FIRAuth.auth()!.currentUser != nil
+        if Auth.auth().currentUser != nil
         {
             let alert = UIAlertController(title: "Save Report", message: "Name your report", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addTextField(configurationHandler: nil)
             alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (_:UIAlertAction) in
-                let report = Report(name: alert.textFields![0].text!, amount: self.amount, number: self.number, f: self.detailFruitAmount, v: self.detailVegetablesAmount, dg: self.detailDryGoodsAmount, d: self.detailDairyAmount, m: self.detailMiscAmount, user: FIRAuth.auth()!.currentUser!.email!)
+                let report = Report(name: alert.textFields![0].text!, amount: self.amount, number: self.number, f: self.detailFruitAmount, v: self.detailVegetablesAmount, dg: self.detailDryGoodsAmount, d: self.detailDairyAmount, m: self.detailMiscAmount, user: Auth.auth().currentUser!.email!)
                 if alert.textFields![0].hasText
                 {
                     let groceryItemRef = self.ref.child(alert.textFields![0].text!.lowercased())

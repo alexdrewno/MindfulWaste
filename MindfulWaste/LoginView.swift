@@ -52,10 +52,10 @@ class LoginView : UIViewController
         {
             if textFields[0].hasText && textFields[1].hasText && textFields[2].text! == textFields[1].text!
             {
-                FIRAuth.auth()?.createUser(withEmail: textFields[0].text!, password: textFields[1].text!, completion: { (user:FIRUser?, error:Error?) in
+                Auth.auth().createUser(withEmail: textFields[0].text!, password: textFields[1].text!, completion: { (user:User?, error:Error?) in
                         if error == nil
                         {
-                            FIRAuth.auth()?.signIn(withEmail: self.textFields[0].text!, password: self.textFields[1].text!, completion: { (user: FIRUser?, error: Error?) in
+                            Auth.auth().signIn(withEmail: self.textFields[0].text!, password: self.textFields[1].text!, completion: { (user: User?, error: Error?) in
                                     self.senderVC.unwindFromSecondary()
                                     self.senderVC.tableView.reloadData()
                                     self.dismiss(animated: true, completion: nil)
@@ -74,10 +74,10 @@ class LoginView : UIViewController
         {
             if textFields[0].hasText && textFields[1].hasText 
             {
-                FIRAuth.auth()?.signIn(withEmail: self.textFields[0].text!, password: self.textFields[1].text!, completion: { (user: FIRUser?, error: Error?) in
+                Auth.auth().signIn(withEmail: self.textFields[0].text!, password: self.textFields[1].text!, completion: { (user: User?, error: Error?) in
                     if error == nil
                     {
-                        FIRAuth.auth()?.signIn(withEmail: self.textFields[0].text!, password: self.textFields[1].text!, completion: { (user: FIRUser?, error: Error?) in
+                        Auth.auth().signIn(withEmail: self.textFields[0].text!, password: self.textFields[1].text!, completion: { (user: User?, error: Error?) in
                             self.senderVC.unwindFromSecondary()
                             self.senderVC.tableView.reloadData()
                             self.dismiss(animated: true, completion: nil)

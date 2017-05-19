@@ -28,9 +28,9 @@ class MenuController: UITableViewController {
             let newCell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! CustomUserCell
             newCell.backgroundView?.alpha = 0.1
             newCell.selectionStyle = .none
-            if FIRAuth.auth()?.currentUser != nil
+            if Auth.auth().currentUser != nil
             {
-                newCell.userLabel.text = FIRAuth.auth()!.currentUser!.email!
+                newCell.userLabel.text = Auth.auth().currentUser!.email!
             }
             return newCell
         }

@@ -23,7 +23,7 @@ class HomePageViewController : UIViewController
     override func viewDidLoad() {
         pieChart.backgroundColor = UIColor.clear
         pieChart.animate(xAxisDuration: 1)
-        let ref = FIRDatabase.database().reference(withPath: "reports")
+        let ref = Database.database().reference(withPath: "reports")
         ref.observe(.value, with: { snapshot in
    
             self.dairyAmount = 0
@@ -38,7 +38,7 @@ class HomePageViewController : UIViewController
             
             for child in snapshot.children
             {
-                let dict = (child as! FIRDataSnapshot).value as! NSDictionary
+                let dict = (child as! DataSnapshot).value as! NSDictionary
                 if let num = (dict["dairyInformation"] as! NSDictionary)["dairyAmount"]! as? Int
                 {
                     self.dairyAmount += num

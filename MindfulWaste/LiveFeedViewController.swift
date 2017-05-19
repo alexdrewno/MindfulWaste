@@ -13,14 +13,14 @@ class LiveFeedViewController: UIViewController, UITableViewDelegate, UITableView
         
         tableView.delegate = self
         tableView.dataSource = self
-        let ref = FIRDatabase.database().reference(withPath: "reports")
+        let ref = Database.database().reference(withPath: "reports")
         ref.observe(.value, with: { snapshot in
             
             self.data = [:]
             for child in snapshot.children
             {
                 
-                let dict = (child as! FIRDataSnapshot).value as! NSDictionary
+                let dict = (child as! DataSnapshot).value as! NSDictionary
                 print(dict, dict["name"])
                 self.data.setObject(dict, forKey: dict["name"] as! String as NSCopying)
             }

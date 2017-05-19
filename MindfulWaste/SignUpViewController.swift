@@ -15,7 +15,7 @@ class SignUpViewController : UIViewController, TextFieldDelegate
     let imgView2 = UIImageView(image: UIImage(named: "femaleImage"))
     let imgView = UIImageView(image: UIImage(named: "maleImage"))
     
-    let ref = FIRDatabase.database().reference(withPath: "users")
+    let ref = Database.database().reference(withPath: "users")
     
     /// A constant to layout the textFields.
     fileprivate let constant: CGFloat = 32
@@ -148,16 +148,17 @@ class SignUpViewController : UIViewController, TextFieldDelegate
             
             let newUser = MindfulWasteUser(email: self.emailField.text!, firstName: self.firstNameField.text!, lastName: self.lastNameField.text!, gender: self.gender)
             
-            FIRAuth.auth()?.createUser(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user:FIRUser?, error:Error?) in
+            Auth.auth().createUser(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user:User?, error:Error?) in
                 if error == nil
                 {
-                    FIRAuth.auth()?.signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user: FIRUser?, error: Error?) in
+                    Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user: User?, error: Error?) in
                         print("worked and signed in")
                         self.performSegue(withIdentifier: "beginningSegue", sender: nil)
                         let userRef = self.ref.child(self.firstNameField.text! + " " + self.lastNameField.text!)
                         userRef.setValue(newUser.toAnyObject())
                         
                     })
+
                 }
                 else
                 {
