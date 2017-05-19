@@ -42,8 +42,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "sideMenuCell") as! SideMenuCell
         cell.selectionStyle = .none
         
-        switch indexPath.row
-        {
+        switch indexPath.row{
             case 0:
                 cell.cellLabel.text = "New Report"
                 cell.imageIcon.image = UIImage(named: "newreporticon")

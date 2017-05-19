@@ -11,6 +11,8 @@ target 'MindfulWaste' do
   pod 'Firebase/Database'
   pod 'FoldingCell'
   pod 'KDCircularProgress'
+  pod 'Material'
+  pod 'expanding-collection'
 
   # Pods for MindfulWaste
 

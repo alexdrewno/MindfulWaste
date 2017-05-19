@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0830"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "462539A0AE4AE714605109C2CF3A2830"
+               BlueprintIdentifier = "18849A134597878684B3B2996C9B6588"
                BuildableName = "Pods_MindfulWaste.framework"
                BlueprintName = "Pods-MindfulWaste"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "462539A0AE4AE714605109C2CF3A2830"
+            BlueprintIdentifier = "18849A134597878684B3B2996C9B6588"
             BuildableName = "Pods_MindfulWaste.framework"
             BlueprintName = "Pods-MindfulWaste"
             ReferencedContainer = "container:Pods.xcodeproj">

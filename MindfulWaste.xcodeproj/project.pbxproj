@@ -9,12 +9,22 @@
 /* Begin PBXBuildFile section */
 		0BC4F91BC60C493847D3714F /* Pods_MindfulWasteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55D4E938AE4606BAA698DC0 /* Pods_MindfulWasteUITests.framework */; };
 		3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3295B41DFEFF1400612904 /* CustomUserCell.swift */; };
+		3F54E1C71EB0D8C700ACBDC2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54E1C61EB0D8C700ACBDC2 /* SignUpViewController.swift */; };
+		3F58942B1ECC892B00A871D8 /* OrganizationReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F58942A1ECC892B00A871D8 /* OrganizationReportCell.swift */; };
+		3F58942D1ECC89C000A871D8 /* OrganizationReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F58942C1ECC89C000A871D8 /* OrganizationReportCell.xib */; };
+		3F58942F1ECC929E00A871D8 /* OrganizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F58942E1ECC929E00A871D8 /* OrganizationViewController.swift */; };
+		3F5894311ECDDDB200A871D8 /* OrganizationDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5894301ECDDDB200A871D8 /* OrganizationDetailTableViewController.swift */; };
+		3F5CDA8D1EC20743004D1668 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5CDA8C1EC20743004D1668 /* HomeViewController.swift */; };
+		3F5CDA8F1EC20A42004D1668 /* HomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5CDA8E1EC20A42004D1668 /* HomePageCell.swift */; };
+		3F62A90C1EB371DD0007D924 /* MindfulWasteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62A90B1EB371DD0007D924 /* MindfulWasteUser.swift */; };
+		3F62A90E1EB387690007D924 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62A90D1EB387690007D924 /* IntroViewController.swift */; };
 		3F643A791E6DA469005B44C1 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F643A781E6DA469005B44C1 /* FeedTableViewCell.swift */; };
 		3F644A981EA7A842000796E8 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F644A971EA7A842000796E8 /* SideMenuViewController.swift */; };
 		3F67B0B21E291304004819B7 /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67B0B11E291304004819B7 /* ReportCell.swift */; };
 		3F6E7E1E1DFB049700421F54 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E1D1DFB049700421F54 /* MenuController.swift */; };
 		3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */; };
 		3F7DB19D1EAE2701009D5198 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DB19C1EAE2701009D5198 /* SideMenuCell.swift */; };
+		3F7DB19F1EAF9661009D5198 /* LoginMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DB19E1EAF9661009D5198 /* LoginMainViewController.swift */; };
 		3F9CC6AA1E02EB8B00BDBE3D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */; };
 		3FE5EAAD1E608F040004A77C /* LiveFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE5EAAC1E608F040004A77C /* LiveFeedViewController.swift */; };
 		3FF422CD1DF7853E001D2874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422CC1DF7853E001D2874 /* AppDelegate.swift */; };
@@ -57,12 +67,22 @@
 		00B447B2BE47E3BAD88B07C2 /* Pods_MindfulWasteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindfulWasteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D915108F249FCC14E432515 /* Pods-MindfulWaste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWaste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste.debug.xcconfig"; sourceTree = "<group>"; };
 		3F3295B41DFEFF1400612904 /* CustomUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUserCell.swift; sourceTree = "<group>"; };
+		3F54E1C61EB0D8C700ACBDC2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3F58942A1ECC892B00A871D8 /* OrganizationReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationReportCell.swift; sourceTree = "<group>"; };
+		3F58942C1ECC89C000A871D8 /* OrganizationReportCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrganizationReportCell.xib; sourceTree = "<group>"; };
+		3F58942E1ECC929E00A871D8 /* OrganizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationViewController.swift; sourceTree = "<group>"; };
+		3F5894301ECDDDB200A871D8 /* OrganizationDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationDetailTableViewController.swift; sourceTree = "<group>"; };
+		3F5CDA8C1EC20743004D1668 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3F5CDA8E1EC20A42004D1668 /* HomePageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageCell.swift; sourceTree = "<group>"; };
+		3F62A90B1EB371DD0007D924 /* MindfulWasteUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MindfulWasteUser.swift; sourceTree = "<group>"; };
+		3F62A90D1EB387690007D924 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		3F643A781E6DA469005B44C1 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		3F644A971EA7A842000796E8 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		3F67B0B11E291304004819B7 /* ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
 		3F6E7E1D1DFB049700421F54 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		3F7DB19C1EAE2701009D5198 /* SideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		3F7DB19E1EAF9661009D5198 /* LoginMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMainViewController.swift; sourceTree = "<group>"; };
 		3F84E5FA1E01984500A0F81D /* MindfulWaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MindfulWaste.entitlements; sourceTree = "<group>"; };
 		3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3FE5EAAC1E608F040004A77C /* LiveFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveFeedViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +173,9 @@
 				3FF7721E1E327DE400F2B6E0 /* ReportFiles */,
 				3FF422CC1DF7853E001D2874 /* AppDelegate.swift */,
 				3FF422CE1DF7853E001D2874 /* ViewController.swift */,
+				3F5CDA8E1EC20A42004D1668 /* HomePageCell.swift */,
 				3F6E7E211DFB06F400421F54 /* HomePageViewController.swift */,
+				3F5CDA8C1EC20743004D1668 /* HomeViewController.swift */,
 				3F6E7E1D1DFB049700421F54 /* MenuController.swift */,
 				3F644A971EA7A842000796E8 /* SideMenuViewController.swift */,
 				3F7DB19C1EAE2701009D5198 /* SideMenuCell.swift */,
@@ -161,6 +183,10 @@
 				3FF422D51DF7853E001D2874 /* LaunchScreen.storyboard */,
 				3FF422D81DF7853E001D2874 /* Info.plist */,
 				953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */,
+				3F58942A1ECC892B00A871D8 /* OrganizationReportCell.swift */,
+				3F58942E1ECC929E00A871D8 /* OrganizationViewController.swift */,
+				3F5894301ECDDDB200A871D8 /* OrganizationDetailTableViewController.swift */,
+				3F58942C1ECC89C000A871D8 /* OrganizationReportCell.xib */,
 			);
 			path = MindfulWaste;
 			sourceTree = "<group>";
@@ -203,6 +229,10 @@
 				3F9CC6A91E02EB8B00BDBE3D /* LoginView.swift */,
 				3F3295B41DFEFF1400612904 /* CustomUserCell.swift */,
 				956F3A4E1E077A0E006EDE6A /* CustomCollectionCell.swift */,
+				3F7DB19E1EAF9661009D5198 /* LoginMainViewController.swift */,
+				3F54E1C61EB0D8C700ACBDC2 /* SignUpViewController.swift */,
+				3F62A90B1EB371DD0007D924 /* MindfulWasteUser.swift */,
+				3F62A90D1EB387690007D924 /* IntroViewController.swift */,
 			);
 			name = "User-LoginFiles";
 			sourceTree = "<group>";
@@ -359,6 +389,7 @@
 				953B2AAE1E05EA3400649F55 /* GoogleService-Info.plist in Resources */,
 				3FF422D41DF7853E001D2874 /* Assets.xcassets in Resources */,
 				3FF422D21DF7853E001D2874 /* Main.storyboard in Resources */,
+				3F58942D1ECC89C000A871D8 /* OrganizationReportCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,22 +554,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5894311ECDDDB200A871D8 /* OrganizationDetailTableViewController.swift in Sources */,
 				3F9CC6AA1E02EB8B00BDBE3D /* LoginView.swift in Sources */,
+				3F62A90C1EB371DD0007D924 /* MindfulWasteUser.swift in Sources */,
 				3FF772211E32811000F2B6E0 /* DetailedReportCell.swift in Sources */,
 				3FE5EAAD1E608F040004A77C /* LiveFeedViewController.swift in Sources */,
 				3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */,
+				3F5CDA8D1EC20743004D1668 /* HomeViewController.swift in Sources */,
 				9535CDFD1E6D07C500F30BB1 /* ReportInfographic.swift in Sources */,
 				3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */,
+				3F54E1C71EB0D8C700ACBDC2 /* SignUpViewController.swift in Sources */,
+				3F5CDA8F1EC20A42004D1668 /* HomePageCell.swift in Sources */,
 				3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */,
 				3F7DB19D1EAE2701009D5198 /* SideMenuCell.swift in Sources */,
 				956F3A4F1E077A0E006EDE6A /* CustomCollectionCell.swift in Sources */,
 				956F3A511E078F4E006EDE6A /* Report.swift in Sources */,
 				3F643A791E6DA469005B44C1 /* FeedTableViewCell.swift in Sources */,
+				3F58942B1ECC892B00A871D8 /* OrganizationReportCell.swift in Sources */,
 				3F6E7E1E1DFB049700421F54 /* MenuController.swift in Sources */,
 				3FF422CD1DF7853E001D2874 /* AppDelegate.swift in Sources */,
+				3F62A90E1EB387690007D924 /* IntroViewController.swift in Sources */,
 				9554EB4B1E076B0E00771CC6 /* ReportViewController.swift in Sources */,
 				3F644A981EA7A842000796E8 /* SideMenuViewController.swift in Sources */,
 				3F67B0B21E291304004819B7 /* ReportCell.swift in Sources */,
+				3F58942F1ECC929E00A871D8 /* OrganizationViewController.swift in Sources */,
+				3F7DB19F1EAF9661009D5198 /* LoginMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
