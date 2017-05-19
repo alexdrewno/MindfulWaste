@@ -3,6 +3,8 @@ class Report: NSObject
 {
     var user = ""
     var name = ""
+    var org = ""
+    var date = ""
     
     var amount : [CGFloat] = [0,0,0,0,0]
     var number : [CGFloat] = [0]
@@ -12,7 +14,7 @@ class Report: NSObject
     var detailDairyAmount : [CGFloat] = [0,0,0,0,0,0]
     var detailMiscAmount : [CGFloat] = [0]
     
-    init(name:String, amount:[CGFloat], number:[CGFloat], f:[CGFloat], v:[CGFloat], dg:[CGFloat], d:[CGFloat], m:[CGFloat], user: String)
+    init(name:String, amount:[CGFloat], number:[CGFloat], f:[CGFloat], v:[CGFloat], dg:[CGFloat], d:[CGFloat], m:[CGFloat], user: String, org: String)
     {
         self.user = user
         self.name = name
@@ -25,6 +27,12 @@ class Report: NSObject
         self.amount = amount
         self.number = number
         
+        self.org = org
+        let date2 = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy"
+        self.date = formatter.string(from: date2)
+        
     }
     
     
@@ -33,6 +41,8 @@ class Report: NSObject
         return [
             "name": name,
             "addedByUser": user,
+            "organization" : org,
+            "date" : date,
             "fruitInformation" : [
                 "fruitAmount" : amount[0],
                 "fruitNumber" : number[0],

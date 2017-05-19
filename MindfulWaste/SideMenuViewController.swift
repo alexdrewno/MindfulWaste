@@ -9,6 +9,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var reportsNumberLabel: UILabel!
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var personName: UILabel!
+    let defaults = UserDefaults()
     
     /*
         
@@ -32,6 +33,8 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .singleLine
+        personName.text! = self.defaults.value(forKey: "user") as! String
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

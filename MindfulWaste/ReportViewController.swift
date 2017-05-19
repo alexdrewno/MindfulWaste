@@ -305,7 +305,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addTextField(configurationHandler: nil)
             alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (_:UIAlertAction) in
-                let report = Report(name: alert.textFields![0].text!, amount: self.amount, number: self.number, f: self.detailFruitAmount, v: self.detailVegetablesAmount, dg: self.detailDryGoodsAmount, d: self.detailDairyAmount, m: self.detailMiscAmount, user: Auth.auth().currentUser!.email!)
+                let report = Report(name: alert.textFields![0].text!, amount: self.amount, number: self.number, f: self.detailFruitAmount, v: self.detailVegetablesAmount, dg: self.detailDryGoodsAmount, d: self.detailDairyAmount, m: self.detailMiscAmount, user: Auth.auth().currentUser!.email!,org: "")
                 if alert.textFields![0].hasText
                 {
                     let groceryItemRef = self.ref.child(alert.textFields![0].text!.lowercased())

@@ -113,8 +113,13 @@
             <connections>
                 <outlet property="backConstraintY" destination="kQD-l3-VVG" id="Kwq-0b-VCQ"/>
                 <outlet property="backContainerView" destination="O1r-hY-tPK" id="tFw-RO-TJp"/>
+                <outlet property="dateLabel" destination="q1c-5o-LU3" id="jc4-lr-x90"/>
                 <outlet property="frontConstraintY" destination="4sv-5S-8Zu" id="7E6-iA-KBT"/>
                 <outlet property="frontContainerView" destination="9JR-ys-H3I" id="cLR-3b-CeG"/>
+                <outlet property="organizationNameLabel" destination="Ei3-pA-qcf" id="Pmh-ML-QXJ"/>
+                <outlet property="personNameLabel" destination="Anq-Z0-FhV" id="SeC-hm-ufX"/>
+                <outlet property="reportNameLabel" destination="EsU-dK-QYF" id="UwH-ze-qfi"/>
+                <outlet property="totalAmountLabel" destination="v0V-dV-12U" id="eiW-tL-QnM"/>
             </connections>
             <point key="canvasLocation" x="321.5" y="101.5"/>
         </collectionViewCell>

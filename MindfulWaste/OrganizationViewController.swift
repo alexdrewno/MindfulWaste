@@ -1,11 +1,14 @@
 import UIKit
 import expanding_collection
 import SideMenuController
+import FirebaseDatabase
+import FirebaseAuth
 
 class OrganizationViewController : ExpandingViewController
 {
     var items = ["banana", "banana2", "banana3"]
     fileprivate var cellsIsOpen = [Bool]()
+    var selfReports = [NSDictionary]()
     override func viewDidLoad() {
         itemSize = CGSize(width: 214, height: 264)
         super.viewDidLoad()
@@ -15,6 +18,27 @@ class OrganizationViewController : ExpandingViewController
         collectionView!.register(nib, forCellWithReuseIdentifier: "expandingCell")
         fillCellIsOpenArray()
         addGestureToView(self.view)
+        
+        let ref = Database.database().reference(withPath: "reports")
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            for child in snapshot.children
+            {
+                let dict = (child as! DataSnapshot).value as! NSDictionary
+                
+                if dict["addedByUser"] as! String == Auth.auth().currentUser?.email!
+                {
+                    self.selfReports.append(dict)
+                    print("found one!!!")
+
+                }
+                
+                
+            }
+            self.collectionView?.reloadData()
+        })
+       
+        
+    
     }
     
     fileprivate func fillCellIsOpenArray() {
@@ -25,7 +49,7 @@ class OrganizationViewController : ExpandingViewController
 
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return selfReports.count
     }
     
      override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -85,11 +109,12 @@ class OrganizationViewController : ExpandingViewController
     }
     
     @IBAction func showFeed(_ sender: Any) {
-        sideMenuController?.performSegue(withIdentifier: "showCenterController1", sender: nil)
+        sideMenuController?.performSegue(withIdentifier: "showLiveFeed", sender: self)
+        print("showcenter")
     }
     
     @IBAction func showHome(_ sender: Any) {
-        sideMenuController?.performSegue(withIdentifier: "showLiveFeed", sender: nil)
+        sideMenuController?.performSegue(withIdentifier: "showCenterController1", sender: nil)
     }
     
 

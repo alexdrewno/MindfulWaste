@@ -10,6 +10,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var personName: UILabel!
     @IBOutlet weak var organizationName: UILabel!
     var defaults = UserDefaults()
+    let ref = Database.database().reference(withPath: "users")
+    
     
     override func viewDidLoad()
     {
@@ -17,28 +19,20 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.separatorStyle = .none
         tableView.allowsSelection = true
         tableView.delegate = self
+        self.navigationItem.hidesBackButton = true
         
-        if let email = Auth.auth().currentUser?.email
-        {
-            print("stage1")
-            let ref = Database.database().reference(withPath: "users")
-            ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                print("stage2")
-                for child in snapshot.children
-                {
-                    print("stage3")
-                    let dict = (child as! DataSnapshot).value as! NSDictionary
-                    if let email2 = dict["email"] as? String
-                    {
-                        if email2 == email
-                        {
-                            self.defaults.setValue(child as! NSDictionary, forKey: "user")
-                            print(self.defaults.value(forKey: "user"))
-                        }
-                    }
-                }
-            })
-        }
+        
+        profileImage.image = UIImage(named: "singleusericon")
+//        if let userDict = self.value(forKey: "user")
+//        {
+//            let userDict2 = userDict as! NSDictionary
+//            let personName = "\(userDict2["firstName"] as! String) \(userDict2["lastName"] as! String)"
+//            print(personName)
+//        }
+        
+        personName.text! = self.defaults.value(forKey: "user") as! String
+        
+   
 
     }
     

@@ -23,16 +23,18 @@ class ViewController: SideMenuController {
             let ref = Database.database().reference()
             
             ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-                print("stage2")
                 for child in snapshot.children
                 {
-                    print("stage3")
                     let dict = (child as! DataSnapshot).value as! NSDictionary
                     if let email2 = dict["email"] as? String
                     {
                         if email2 == email
                         {
-                            self.defaults.setValue(child as! NSDictionary, forKey: "user")                        }
+                            let dict2 = ((child as! DataSnapshot).value as! NSDictionary)
+                            self.defaults.setValue("\(dict2["firstName"] as! String) \(dict2["lastName"] as! String)", forKey: "user")
+                            print("\(dict2["firstName"] as! String) \(dict2["lastName"] as! String)")
+                            print(self.defaults.value(forKey: "user"))
+                        }
                     }
                 }
             }){ (error) in

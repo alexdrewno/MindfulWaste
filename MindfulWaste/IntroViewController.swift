@@ -9,7 +9,14 @@ class IntroViewController: UIViewController
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(Auth.auth().currentUser)
+        do {
+           try Auth.auth().signOut()
+            print("successfulsignout")
+        }
+        catch
+        {
+            print(error.localizedDescription)
+        }
         if Auth.auth().currentUser != nil
         {
             performSegue(withIdentifier: "skipLogin", sender: nil)
