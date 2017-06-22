@@ -16,6 +16,7 @@ class SignUpViewController : UIViewController, TextFieldDelegate
     let imgView = UIImageView(image: UIImage(named: "maleImage"))
     
     let ref = Database.database().reference(withPath: "users")
+    let defaults = UserDefaults()
     
     /// A constant to layout the textFields.
     fileprivate let constant: CGFloat = 32
@@ -153,8 +154,11 @@ class SignUpViewController : UIViewController, TextFieldDelegate
                 {
                     Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user: User?, error: Error?) in
                         print("worked and signed in")
-                        self.performSegue(withIdentifier: "beginningSegue", sender: nil)
+                        //self.performSegue(withIdentifier: "beginningSegue", sender: nil)
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "firstVC") as! ViewController
+                        self.present(vc, animated: true, completion: nil)
                         let userRef = self.ref.child(self.firstNameField.text! + " " + self.lastNameField.text!)
+                        self.defaults.set(self.firstNameField.text! + " " + self.lastNameField.text!, forKey: "user")
                         userRef.setValue(newUser.toAnyObject())
                         
                     })

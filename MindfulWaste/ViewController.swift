@@ -32,8 +32,10 @@ class ViewController: SideMenuController {
                         {
                             let dict2 = ((child as! DataSnapshot).value as! NSDictionary)
                             self.defaults.setValue("\(dict2["firstName"] as! String) \(dict2["lastName"] as! String)", forKey: "user")
+                            print("SAVED")
                             print("\(dict2["firstName"] as! String) \(dict2["lastName"] as! String)")
                             print(self.defaults.value(forKey: "user"))
+                            
                         }
                     }
                 }

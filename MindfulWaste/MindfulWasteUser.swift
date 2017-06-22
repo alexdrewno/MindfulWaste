@@ -13,10 +13,10 @@ class MindfulWasteUser : NSObject
     var firstName = ""
     var lastName = ""
     var gender = ""
-    var organization = ""
+    var organizations = [""]
     
     
-    init(email: String, firstName: String, lastName: String, gender: String, organization: String? = nil)
+    init(email: String, firstName: String, lastName: String, gender: String, organization: [String]? = nil)
     {
         self.email = email
         self.firstName = firstName
@@ -24,7 +24,7 @@ class MindfulWasteUser : NSObject
         self.gender = gender
         if organization != nil
         {
-            self.organization = organization!
+            self.organizations = organization!
         }
     }
     
@@ -35,7 +35,7 @@ class MindfulWasteUser : NSObject
             "firstName": firstName,
             "lastName": lastName,
             "gender": gender,
-            "organization" : organization
+            "organization" : organizations
         ]
         
     }

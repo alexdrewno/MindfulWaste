@@ -9,6 +9,8 @@ class OrganizationViewController : ExpandingViewController
     var items = ["banana", "banana2", "banana3"]
     fileprivate var cellsIsOpen = [Bool]()
     var selfReports = [NSDictionary]()
+    var defaults = UserDefaults()
+    
     override func viewDidLoad() {
         itemSize = CGSize(width: 214, height: 264)
         super.viewDidLoad()
@@ -34,6 +36,11 @@ class OrganizationViewController : ExpandingViewController
                 
                 
             }
+            
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM-dd-yyyy"
+        
             self.collectionView?.reloadData()
         })
        
@@ -54,7 +61,29 @@ class OrganizationViewController : ExpandingViewController
     
      override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ("expandingCell"), for: indexPath as IndexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ("expandingCell"), for: indexPath as IndexPath) as! OrganizationReportCell
+        
+        let fruitAmount = (selfReports[indexPath.row]["fruitInformation"] as! NSDictionary)["fruitAmount"] as! CGFloat
+        let miscAmount = (selfReports[indexPath.row]["miscInformation"] as! NSDictionary)["miscAmount"] as! CGFloat
+        let dairyAmount = (selfReports[indexPath.row]["dairyInformation"] as! NSDictionary)["dairyAmount"] as! CGFloat
+        let dryGoodsAmount = (selfReports[indexPath.row]["dryGoodsInformation"] as! NSDictionary)["dryGoodsAmount"] as! CGFloat
+        let vegetableAmount = (selfReports[indexPath.row]["vegetableInformation"] as! NSDictionary)["vegetableAmount"] as! CGFloat
+        var total = fruitAmount + miscAmount + dairyAmount + dryGoodsAmount + vegetableAmount
+        cell.personNameLabel.text! = selfReports[indexPath.row]["addedByUser"] as! String
+        cell.totalAmountLabel.text! = "\(total)"
+        cell.dateLabel.text! = selfReports[indexPath.row]["date"] as! String
+        cell.reportNameLabel.text! = selfReports[indexPath.row]["name"] as! String
+        
+        if selfReports[indexPath.row]["organization"] as! String != ""
+        {
+            cell.organizationNameLabel.text! = selfReports[indexPath.row]["organization"] as! String
+        }
+        else
+        {
+            cell.organizationNameLabel.text! = "No Organization"
+        }
+
+        
         return cell
         
     }
@@ -64,6 +93,9 @@ class OrganizationViewController : ExpandingViewController
         let cell =
             (collectionView.cellForItem(at: indexPath as IndexPath) as! OrganizationReportCell)
         
+        print("selected")
+           defaults.set(selfReports[indexPath.row], forKey: "pressedReport")
+        
         if cell.isOpened == false
         {
             cell.cellIsOpen(!cell.isOpened)
@@ -71,15 +103,18 @@ class OrganizationViewController : ExpandingViewController
             
         }
         else
-        {
+        {  print("push")
+            
             pushToViewController(getViewController())
-            print("push")
+          
         }
         
         print("called")
     }
     
     fileprivate func getViewController() -> ExpandingTableViewController {
+        let indexPath = IndexPath(row: currentIndex, section: 0)
+        defaults.set(selfReports[indexPath.row], forKey: "pressedReport")
         let storyboard = self.storyboard!
         let toViewController: OrganizationDetailTableViewController = storyboard.instantiateViewController(withIdentifier: "organizationTableView") as! OrganizationDetailTableViewController
         return toViewController
@@ -88,6 +123,7 @@ class OrganizationViewController : ExpandingViewController
     @IBAction func swipeGesture(_ sender: Any) {
         print("SWIPED")
         let indexPath = IndexPath(row: currentIndex, section: 0)
+        defaults.set(selfReports[indexPath.row], forKey: "pressedReport")
         guard let cell  = collectionView?.cellForItem(at: indexPath) as? OrganizationReportCell else { return }
         // double swipe Up transition
         if cell.isOpened == true && (sender as AnyObject).direction == .up {

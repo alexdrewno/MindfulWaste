@@ -63,7 +63,9 @@ class LoginMainViewController: UIViewController, TextFieldDelegate
             if error == nil
             {
                 Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user: User?, error: Error?) in
-                    self.performSegue(withIdentifier: "beginningSegue2", sender: nil)
+                    //self.performSegue(withIdentifier: "beginningSegue2", sender: nil)
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "firstVC") as! ViewController
+                    self.present(vc, animated: true, completion: nil)
                 })
             }
             else

@@ -30,6 +30,34 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //            print(personName)
 //        }
         
+        if let email = Auth.auth().currentUser?.email
+        {
+            let ref = Database.database().reference()
+            
+            ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                for child in snapshot.children
+                {
+                    let dict = (child as! DataSnapshot).value as! NSDictionary
+                    if let email2 = dict["email"] as? String
+                    {
+                        if email2 == email
+                        {
+                            let dict2 = ((child as! DataSnapshot).value as! NSDictionary)
+                            self.defaults.setValue("\(dict2["firstName"] as! String) \(dict2["lastName"] as! String)", forKey: "user")
+                            self.personName.text! = self.defaults.value(forKey: "user") as! String
+                            self.organizationName.text! = (dict2["organizations"] as! Array)[0] as! String
+                            
+                        }
+                    }
+                }
+            }){ (error) in
+                print(error.localizedDescription)
+            }
+        }
+
+        
+        
+        print(self.defaults.value(forKey: "user"))
         personName.text! = self.defaults.value(forKey: "user") as! String
         
    
@@ -83,6 +111,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             sideMenuController!.performSegue(withIdentifier: "organizationViewController", sender: nil)
         case 1:
             print("my organization")
+            sideMenuController!.performSegue(withIdentifier: "myOrganizationsSegue", sender: nil)
         case 2:
             print("organizations")
             sideMenuController!.performSegue(withIdentifier: "organizationViewController", sender: nil)
