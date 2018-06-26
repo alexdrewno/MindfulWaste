@@ -46,14 +46,14 @@ class LiveFeedViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell") as! FeedTableViewCell
         cell.selectionStyle = .none
         var total = (((data[data.allKeys[indexPath.row]] as! NSDictionary)["miscInformation"] as! NSDictionary)["miscAmount"] as! CGFloat) + (((data[data.allKeys[indexPath.row]] as! NSDictionary)["dairyInformation"] as! NSDictionary)["dairyAmount"] as! CGFloat) + (((data[data.allKeys[indexPath.row]] as! NSDictionary)["dryGoodsInformation"] as! NSDictionary)["dryGoodsAmount"] as! CGFloat) + (((data[data.allKeys[indexPath.row]] as! NSDictionary)["vegetableInformation"] as! NSDictionary)["vegetableAmount"] as! CGFloat) + (((data[data.allKeys[indexPath.row]] as! NSDictionary)["fruitInformation"] as! NSDictionary)["fruitAmount"] as! CGFloat)
-        cell.amounts[0].text! = "\(((data[data.allKeys[indexPath.row]] as! NSDictionary)["fruitInformation"] as! NSDictionary)["fruitAmount"] as! CGFloat) lbs."
-        cell.amounts[1].text! = "\(((data[data.allKeys[indexPath.row]] as! NSDictionary)["vegetableInformation"] as! NSDictionary)["vegetableAmount"] as! CGFloat) lbs."
-        cell.amounts[2].text! = "\(((data[data.allKeys[indexPath.row]] as! NSDictionary)["dryGoodsInformation"] as! NSDictionary)["dryGoodsAmount"] as! CGFloat) lbs."
-        cell.amounts[3].text! = "\(((data[data.allKeys[indexPath.row]] as! NSDictionary)["dairyInformation"] as! NSDictionary)["dairyAmount"] as! CGFloat) lbs."
-        cell.amounts[4].text! = "\(((data[data.allKeys[indexPath.row]] as! NSDictionary)["miscInformation"] as! NSDictionary)["miscAmount"] as! CGFloat) lbs."
-        cell.reportNameLabel.text! = data.allKeys[indexPath.row] as! String
-        cell.totalAmount.text = "\(total) lbs."
-        cell.email.text! = (data[data.allKeys[indexPath.row]] as! NSDictionary)["addedByUser"] as! String
+//        cell.amounts[0].text! = "\(((data[data.allKeys[indexPath.row]] as! NSDictionary)["fruitInformation"] as! NSDictionary)["fruitAmount"] as! CGFloat) lbs."
+//        cell.amounts[1].text! = "\(((data[data.allKeys[indexPath.row]] as! NSDictionary)["vegetableInformation"] as! NSDictionary)["vegetableAmount"] as! CGFloat) lbs."
+//        cell.amounts[2].text! = "\(((data[data.allKeys[indexPath.row]] as! NSDictionary)["dryGoodsInformation"] as! NSDictionary)["dryGoodsAmount"] as! CGFloat) lbs."
+//        cell.amounts[3].text! = "\(((data[data.allKeys[indexPath.row]] as! NSDictionary)["dairyInformation"] as! NSDictionary)["dairyAmount"] as! CGFloat) lbs."
+//        cell.amounts[4].text! = "\(((data[data.allKeys[indexPath.row]] as! NSDictionary)["miscInformation"] as! NSDictionary)["miscAmount"] as! CGFloat) lbs."
+//        cell.reportNameLabel.text! = data.allKeys[indexPath.row] as! String
+//        cell.totalAmount.text = "\(total) lbs."
+//        cell.email.text! = (data[data.allKeys[indexPath.row]] as! NSDictionary)["addedByUser"] as! String
         return cell
     }
     

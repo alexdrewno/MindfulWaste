@@ -30,7 +30,6 @@ class OrganizationViewController : ExpandingViewController
                 if dict["addedByUser"] as! String == Auth.auth().currentUser?.email!
                 {
                     self.selfReports.append(dict)
-                    print("found one!!!")
 
                 }
                 
@@ -52,35 +51,67 @@ class OrganizationViewController : ExpandingViewController
         for _ in items {
             cellsIsOpen.append(false)
         }
+        cellsIsOpen.append(false)
     }
 
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return selfReports.count
+        return selfReports.count + 1
     }
     
      override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ("expandingCell"), for: indexPath as IndexPath) as! OrganizationReportCell
         
-        let fruitAmount = (selfReports[indexPath.row]["fruitInformation"] as! NSDictionary)["fruitAmount"] as! CGFloat
-        let miscAmount = (selfReports[indexPath.row]["miscInformation"] as! NSDictionary)["miscAmount"] as! CGFloat
-        let dairyAmount = (selfReports[indexPath.row]["dairyInformation"] as! NSDictionary)["dairyAmount"] as! CGFloat
-        let dryGoodsAmount = (selfReports[indexPath.row]["dryGoodsInformation"] as! NSDictionary)["dryGoodsAmount"] as! CGFloat
-        let vegetableAmount = (selfReports[indexPath.row]["vegetableInformation"] as! NSDictionary)["vegetableAmount"] as! CGFloat
-        var total = fruitAmount + miscAmount + dairyAmount + dryGoodsAmount + vegetableAmount
-        cell.personNameLabel.text! = selfReports[indexPath.row]["addedByUser"] as! String
-        cell.totalAmountLabel.text! = "\(total)"
-        cell.dateLabel.text! = selfReports[indexPath.row]["date"] as! String
-        cell.reportNameLabel.text! = selfReports[indexPath.row]["name"] as! String
-        
-        if selfReports[indexPath.row]["organization"] as! String != ""
+        if selfReports.count != 0
         {
-            cell.organizationNameLabel.text! = selfReports[indexPath.row]["organization"] as! String
-        }
-        else
-        {
-            cell.organizationNameLabel.text! = "No Organization"
+            if indexPath.row == 0
+            {
+                var totalFruit: CGFloat = 0.0
+                var totalMisc: CGFloat = 0.0
+                var totalDairy: CGFloat = 0.0
+                var totalDryGoods: CGFloat = 0.0
+                var totalVegetable: CGFloat = 0.0
+                var total: CGFloat = 0.0
+                for item in selfReports
+                {
+                    totalFruit += (item["fruitInformation"] as! NSDictionary)["fruitAmount"] as! CGFloat
+                    totalMisc += (item["miscInformation"] as! NSDictionary)["miscAmount"] as! CGFloat
+                    totalDairy += (item["dairyInformation"] as! NSDictionary)["dairyAmount"] as! CGFloat
+                    totalDryGoods += (item["dryGoodsInformation"] as! NSDictionary)["dryGoodsAmount"] as! CGFloat
+                    totalVegetable += (item["vegetableInformation"] as! NSDictionary)["vegetableAmount"] as! CGFloat
+                }
+                
+                total = totalVegetable + totalDryGoods + totalDairy + totalMisc + totalFruit
+                
+                cell.personNameLabel.text! = selfReports[0]["addedByUser"] as! String
+                cell.totalAmountLabel.text! = "\(total)"
+                cell.dateLabel.text! = selfReports[0]["date"] as! String
+                cell.reportNameLabel.text! = "Collective Data"
+            }
+            else
+            {
+                
+                let fruitAmount = (selfReports[indexPath.row-1]["fruitInformation"] as! NSDictionary)["fruitAmount"] as! CGFloat
+                let miscAmount = (selfReports[indexPath.row-1]["miscInformation"] as! NSDictionary)["miscAmount"] as! CGFloat
+                let dairyAmount = (selfReports[indexPath.row-1]["dairyInformation"] as! NSDictionary)["dairyAmount"] as! CGFloat
+                let dryGoodsAmount = (selfReports[indexPath.row-1]["dryGoodsInformation"] as! NSDictionary)["dryGoodsAmount"] as! CGFloat
+                let vegetableAmount = (selfReports[indexPath.row-1]["vegetableInformation"] as! NSDictionary)["vegetableAmount"] as! CGFloat
+                var total = fruitAmount + miscAmount + dairyAmount + dryGoodsAmount + vegetableAmount
+                cell.personNameLabel.text! = selfReports[indexPath.row-1]["addedByUser"] as! String
+                cell.totalAmountLabel.text! = "\(total)"
+                cell.dateLabel.text! = selfReports[indexPath.row-1]["date"] as! String
+                cell.reportNameLabel.text! = selfReports[indexPath.row-1]["name"] as! String
+                
+                if selfReports[indexPath.row-1]["organization"] as! String != ""
+                {
+                    cell.organizationNameLabel.text! = selfReports[indexPath.row-1]["organization"] as! String
+                }
+                else
+                {
+                    cell.organizationNameLabel.text! = "No Organization"
+                }
+            }
         }
 
         
@@ -88,13 +119,13 @@ class OrganizationViewController : ExpandingViewController
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         let cell =
             (collectionView.cellForItem(at: indexPath as IndexPath) as! OrganizationReportCell)
         
         print("selected")
-           defaults.set(selfReports[indexPath.row], forKey: "pressedReport")
+           //defaults.set(selfReports[indexPath.row-1], forKey: "pressedReport")
         
         if cell.isOpened == false
         {
@@ -114,7 +145,15 @@ class OrganizationViewController : ExpandingViewController
     
     fileprivate func getViewController() -> ExpandingTableViewController {
         let indexPath = IndexPath(row: currentIndex, section: 0)
-        defaults.set(selfReports[indexPath.row], forKey: "pressedReport")
+        if indexPath.row == 0
+        {
+            defaults.set(true, forKey: "firstCell")
+        }
+        else
+        {
+            defaults.set(false, forKey: "firstCell")
+            defaults.set(selfReports[indexPath.row-1], forKey: "pressedReport")
+        }
         let storyboard = self.storyboard!
         let toViewController: OrganizationDetailTableViewController = storyboard.instantiateViewController(withIdentifier: "organizationTableView") as! OrganizationDetailTableViewController
         return toViewController
@@ -123,7 +162,15 @@ class OrganizationViewController : ExpandingViewController
     @IBAction func swipeGesture(_ sender: Any) {
         print("SWIPED")
         let indexPath = IndexPath(row: currentIndex, section: 0)
-        defaults.set(selfReports[indexPath.row], forKey: "pressedReport")
+        if indexPath.row == 0
+        {
+            defaults.set(true, forKey: "firstCell")
+        }
+        else
+        {
+            defaults.set(false, forKey: "firstCell")
+            defaults.set(selfReports[indexPath.row-1], forKey: "pressedReport")
+        }
         guard let cell  = collectionView?.cellForItem(at: indexPath) as? OrganizationReportCell else { return }
         // double swipe Up transition
         if cell.isOpened == true && (sender as AnyObject).direction == .up {
@@ -178,7 +225,7 @@ extension OrganizationViewController {
         toView.addGestureRecognizer(gesutereDown)
     }
     
-    func swipeHandler(_ sender: UISwipeGestureRecognizer) {
+    @objc func swipeHandler(_ sender: UISwipeGestureRecognizer) {
         let indexPath = IndexPath(row: currentIndex, section: 0)
         guard let cell  = collectionView?.cellForItem(at: indexPath) as? OrganizationReportCell else { return }
         // double swipe Up transition

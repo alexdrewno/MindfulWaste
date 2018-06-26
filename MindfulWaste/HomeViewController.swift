@@ -20,6 +20,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.allowsSelection = true
         tableView.delegate = self
         self.navigationItem.hidesBackButton = true
+        organizationName.text! = ""
         
         
         profileImage.image = UIImage(named: "singleusericon")
@@ -45,7 +46,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                             let dict2 = ((child as! DataSnapshot).value as! NSDictionary)
                             self.defaults.setValue("\(dict2["firstName"] as! String) \(dict2["lastName"] as! String)", forKey: "user")
                             self.personName.text! = self.defaults.value(forKey: "user") as! String
-                            self.organizationName.text! = (dict2["organizations"] as! Array)[0] as! String
+                            if (dict2["organization"] as! [String]).count != 1
+                            {
+                                self.organizationName.text! = (dict2["organization"] as! [String])[1]
+                            }
                             
                         }
                     }
@@ -57,8 +61,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         
         
-        print(self.defaults.value(forKey: "user"))
-        personName.text! = self.defaults.value(forKey: "user") as! String
+        if self.defaults.value(forKey: "users") != nil
+        {
+            self.personName.text! = self.defaults.value(forKey: "user") as! String
+        }
+        
+        //personName.text! = self.defaults.value(forKey: "user") as! String
         
    
 
@@ -70,7 +78,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homePageCell")! as! HomePageCell
-        cell.insideView.cornerRadius = 6
+        //cell.insideView.cornerRadius = 6
        
         
         switch indexPath.row{
@@ -114,7 +122,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             sideMenuController!.performSegue(withIdentifier: "myOrganizationsSegue", sender: nil)
         case 2:
             print("organizations")
-            sideMenuController!.performSegue(withIdentifier: "organizationViewController", sender: nil)
+            sideMenuController!.performSegue(withIdentifier: "showAllOrgs", sender: nil)
             
         default:
             break

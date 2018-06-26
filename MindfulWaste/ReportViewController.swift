@@ -34,6 +34,7 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var cellHeights : [CGFloat] = []
     var descriptions : [[String]] = []
     let defaults = UserDefaults()
+    var organizationArray = [String]()
 
     
     
@@ -43,6 +44,31 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         
         cellHeights = (0..<categories.count).map { _ in C.CellHeight.close }
+        
+        if let email = Auth.auth().currentUser?.email
+        {
+            let ref = Database.database().reference()
+            
+            ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                for child in snapshot.children
+                {
+                    let dict = (child as! DataSnapshot).value as! NSDictionary
+                    if let email2 = dict["email"] as? String
+                    {
+                        if email2 == email
+                        {
+                            let dict2 = ((child as! DataSnapshot).value as! NSDictionary)
+                            self.organizationArray = dict2["organization"] as! Array
+                            self.tableView.reloadData()
+                            
+                        }
+                    }
+                }
+            }){ (error) in
+                print(error.localizedDescription)
+            }
+        }
+
     }
     
     
@@ -77,7 +103,6 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.containerView.backgroundColor = colors[indexPath.row].lighter(by: 10.0)
         cell.innerContainer.backgroundColor = colors[indexPath.row].lighter(by: 45.0)
-        cell.progressCircle.set(colors: colors[indexPath.row], UIColor.white)
         cell.backViewColor = colors[indexPath.row].darker(by: 45.0)!
         cell.topView.backgroundColor = colors[indexPath.row].darker(by: 20.0)
         cell.categoryContainerLabel.text = categories[indexPath.row]
@@ -87,14 +112,19 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         switch indexPath.row{
         case 0:
             cell.descriptions = ["Whole Fruit", "Packaged Fruit", "Fruit Juice", "Other Fruit"]
+            cell.cellCategories.text! = "Whole Fruit, Packaged Fruit, Fruit Juice, Other Fruit"
         case 1:
             cell.descriptions = ["Vegetables", "Packaged Vegetables", "Vegetable Juice", "Other Vegetables"]
+            cell.cellCategories.text! = "Vegetables, Packaged Vegetables, Vegetable Juice, Other Vegetables"
         case 2:
             cell.descriptions = ["Misc. Bagged Snacks", "Fruit & Grain Bars", "Crackers", "Raisins", "Dry Cereal", "Granola", "Muffins", "Chips", "Other Dry Goods"]
+            cell.cellCategories.text! = "Misc. Bagged Snacks, Fruit and Grain Bars, Crackers, Raisins, Dry Cereal, Granola, Muffins, Chips, Other Dry Goods"
         case 3:
             cell.descriptions = ["Cheese", "Yogurt", "White Milk", "Chocolate Milk", "Strawberry Milk", "Other Dairy"]
+            cell.cellCategories.text! = "Cheese, Yogurt, White Milk, Chocolate Milk, Strawberry Milk, Other Dairy"
         case 4:
             cell.descriptions = ["Items such as PB&J, etc."]
+            cell.cellCategories.text! = "Items such as PB&J, etc."
         default:
             break;
         }
@@ -219,9 +249,6 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.numberValues = detailFruitNumber
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[0]) lbs."
-            cell.updateCircularProgress()
-            cell.progressCircle.angle = Double(amount[0]/100.0 * 360.0)
-            print("fruit", cell.progressCircle.angle)
             
         case 1:
             cell.descriptions =  ["Vegetables", "Packaged Vegetables", "Vegetable Juice", "Other Vegetables"]
@@ -229,36 +256,24 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.numberValues = detailVegetablesNumber
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[1]) lbs"
-            cell.updateCircularProgress()
-            cell.progressCircle.angle = Double(amount[1]/100.0 * 360.0)
-             print("v", cell.progressCircle.angle)
         case 2:
             cell.descriptions =  ["Misc. Bagged Snacks", "Fruit & Grain Bars", "Crackers", "Raisins", "Dry Cereal", "Granola", "Muffins", "Chips", "Other Dry Goods"]
             cell.amountValues = detailDryGoodsAmount
             cell.numberValues = detailDryGoodsNumber
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[2]) lbs"
-            cell.updateCircularProgress()
-            cell.progressCircle.angle = Double(amount[2]/100.0 * 360.0)
-             print("dg", cell.progressCircle.angle)
         case 3:
             cell.descriptions = ["Cheese", "Yogurt", "White Milk", "Chocolate Milk", "Strawberry Milk", "Other Dairy"]
             cell.amountValues = detailDairyAmount
             cell.amountValues = detailDairyNumber
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[3]) lbs"
-            cell.updateCircularProgress()
-            cell.progressCircle.angle = Double(amount[3]/100.0 * 360.0)
-             print("d", cell.progressCircle.angle)
         case 4:
             cell.descriptions = ["Items such as PB&J, etc."]
             cell.amountValues = detailMiscAmount
             cell.amountValues = detailMiscNumber
             cell.insideTableView.reloadData()
             cell.amountLabel.text = "\(amount[4]) lbs"
-            cell.updateCircularProgress()
-            cell.progressCircle.angle = Double(amount[4]/100.0 * 360.0)
-             print("m", cell.progressCircle.angle)
         default:
             break;
         }
@@ -268,15 +283,15 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var duration = 0.0
         if cellHeights[indexPath.row] == kCloseCellHeight { // open cell
             cellHeights[indexPath.row] = kOpenCellHeight
-            cell.selectedAnimation(true, animated: true, completion: nil)
+            cell.unfold(true, animated: true, completion: nil)
             duration = 0.5
         } else {// close cell
             cellHeights[indexPath.row] = kCloseCellHeight
-            cell.selectedAnimation(false, animated: true, completion: nil)
+            cell.unfold(false, animated: true, completion: nil)
             duration = 1.1
         }
         
-        UIView.animate(withDuration: duration, delay: 0.01, options: .curveEaseOut, animations: { _ in
+        UIView.animate(withDuration: duration, delay: 0.01, options: .curveEaseOut, animations: { 
             tableView.beginUpdates()
             tableView.endUpdates()
         }, completion:  { (bool) in
@@ -290,9 +305,9 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if case let cell as ReportCell = cell {
             if cellHeights[indexPath.row] == C.CellHeight.close {
-                cell.selectedAnimation(false, animated: false, completion:nil)
+                cell.unfold(false, animated: false, completion:nil)
             } else {
-                cell.selectedAnimation(true, animated: false, completion: nil)
+                cell.unfold(true, animated: false, completion: nil)
             }
         }
     }
@@ -305,21 +320,71 @@ class ReportViewController: UIViewController, UITableViewDelegate, UITableViewDa
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addTextField(configurationHandler: nil)
             alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (_:UIAlertAction) in
-                let report = Report(name: alert.textFields![0].text!, amount: self.amount, number: self.number, f: self.detailFruitAmount, v: self.detailVegetablesAmount, dg: self.detailDryGoodsAmount, d: self.detailDairyAmount, m: self.detailMiscAmount, fn: self.detailFruitNumber, vn: self.detailVegetablesNumber, dgn: self.detailDryGoodsNumber, dn: self.detailDairyNumber, mn: self.detailMiscNumber, user: Auth.auth().currentUser!.email!, org: "")
-                if alert.textFields![0].hasText
+                
+                
+                let alert2 = UIAlertController(title: "Under which organization?", message: nil, preferredStyle: .actionSheet)
+            
+                for name in self.organizationArray
                 {
-                    let groceryItemRef = self.ref.child(alert.textFields![0].text!.lowercased())
-                    groceryItemRef.setValue(report.toAnyObject())
-                    self.defaults.set(report.toAnyObject() as! NSDictionary, forKey: "mostRecentReportName")
-                    self.sideMenuController?.performSegue(withIdentifier: "showInfographic", sender: nil)
-                }
-                else
-                {
-                    let alert2 = UIAlertController(title: "Error", message: "Please type in a unique report name.", preferredStyle: .alert)
-                    alert2.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
-                        self.present(alert,animated: false)
+                    alert2.addAction(UIAlertAction(title: name, style: .default, handler: { (action) in
+                        
+                        var alert3 = UIAlertController()
+                        if action.title! != ""
+                        {
+                            alert3 = UIAlertController(title: "Under '\(action.title!)?'", message: nil, preferredStyle: .alert)
+                        }
+                        else
+                        {
+                            alert3 = UIAlertController(title: "Not under an organization?", message: nil, preferredStyle: .alert)
+                        }
+                        alert3.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action2) in
+                            
+                            let report = Report(name: alert.textFields![0].text!, amount: self.amount, number: self.number, f: self.detailFruitAmount, v: self.detailVegetablesAmount, dg: self.detailDryGoodsAmount, d: self.detailDairyAmount, m: self.detailMiscAmount, fn: self.detailFruitNumber, vn: self.detailVegetablesNumber, dgn: self.detailDryGoodsNumber, dn: self.detailDairyNumber, mn: self.detailMiscNumber, user: Auth.auth().currentUser!.email!, org: action.title!)
+                            if alert.textFields![0].hasText
+                            {
+                                let groceryItemRef = self.ref.child(alert.textFields![0].text!.lowercased())
+                                groceryItemRef.setValue(report.toAnyObject())
+                                self.defaults.set(report.toAnyObject() as! NSDictionary, forKey: "mostRecentReportName")
+                                self.sideMenuController?.performSegue(withIdentifier: "showInfographic", sender: nil)
+                                let ref1 = Database.database().reference()
+                                
+                                ref1.child("organizations").observeSingleEvent(of: .value, with: { (snapshot) in
+                                    
+                                    let dict = snapshot.value as! NSDictionary
+                                    if action.title! != ""
+                                    {
+                                        let newVal = (dict[action.title!] as! NSDictionary)["numReports"] as! Int
+                                        ref1.child("organizations/\(action.title!)/numReports").setValue(newVal + 1)
+                                    }
+                                    
+                                })
+                            }
+                            else
+                            {
+                                let alert2 = UIAlertController(title: "Error", message: "Please type in a unique report name.", preferredStyle: .alert)
+                                alert2.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
+                                    self.present(alert,animated: false)
+                                }))
+                            }
+                            
+                            
+                        }))
+                        alert3.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                            self.present(alert2, animated: true, completion: nil)
+                        }))
+                        
+                        self.present(alert3, animated: true, completion: nil)
                     }))
                 }
+                alert2.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                
+                self.present(alert2, animated: true, completion: nil)
+                
+                
+                
+                
+                
+                
                 
                 
             }))

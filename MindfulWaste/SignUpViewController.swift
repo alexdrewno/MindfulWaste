@@ -24,12 +24,19 @@ class SignUpViewController : UIViewController, TextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         preparePasswordField()
         prepareConfirmPasswordField()
         prepareEmailField()
         prepareFirstNameField()
         prepareLastNameField()
         prepareGenderImageViews()
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     fileprivate func prepareEmailField() {
@@ -42,7 +49,7 @@ class SignUpViewController : UIViewController, TextFieldDelegate
         emailField.font = UIFont(name: "Gill Sans", size: 15)
 
         
-        view.layout(emailField).top(view.height/7).left(20).right(20)
+        view.layout(emailField).top(view.frame.height/7).left(20).right(20)
     }
     
     fileprivate func preparePasswordField() {
@@ -56,7 +63,7 @@ class SignUpViewController : UIViewController, TextFieldDelegate
         // Setting the visibilityIconButton color.
         passwordField.visibilityIconButton?.tintColor = Color.green.base.withAlphaComponent(passwordField.isSecureTextEntry ? 0.38 : 0.54)
         
-        view.layout(passwordField).top(view.height/7 * 2).left(20).right(20)
+        view.layout(passwordField).top(view.frame.height/7 * 2).left(20).right(20)
     }
     
     fileprivate func prepareConfirmPasswordField() {
@@ -70,7 +77,7 @@ class SignUpViewController : UIViewController, TextFieldDelegate
         
         confirmPasswordField.visibilityIconButton?.tintColor = Color.green.base.withAlphaComponent(passwordField.isSecureTextEntry ? 0.38 : 0.54)
         
-        view.layout(confirmPasswordField).top(view.height/7 * 3).left(20).right(20)
+        view.layout(confirmPasswordField).top(view.frame.height/7 * 3).left(20).right(20)
     }
     
     fileprivate func prepareFirstNameField(){
@@ -79,7 +86,7 @@ class SignUpViewController : UIViewController, TextFieldDelegate
         firstNameField.clearButtonMode = .whileEditing
         firstNameField.font = UIFont(name: "Gill Sans", size: 15)
         
-        view.layout(firstNameField).top(view.height/7 * 4 - 10).left(20).width(view.width/2.5)
+        view.layout(firstNameField).top(view.frame.height/7 * 4 - 10).left(20).width(view.frame.width/2.5)
     }
     
     fileprivate func prepareLastNameField(){
@@ -88,7 +95,7 @@ class SignUpViewController : UIViewController, TextFieldDelegate
         lastNameField.clearButtonMode = .whileEditing
         lastNameField.font = UIFont(name: "Gill Sans", size: 15)
         
-        view.layout(lastNameField).top(view.height/7 * 4 - 10).right(20).width(view.width/2.5)
+        view.layout(lastNameField).top(view.frame.height/7 * 4 - 10).right(20).width(view.frame.width/2.5)
     }
     
     func prepareGenderImageViews()
@@ -96,30 +103,33 @@ class SignUpViewController : UIViewController, TextFieldDelegate
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap1(_:)))
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap2(_:)))
         
+        
+        
+        
         imgView2.isUserInteractionEnabled = true
         imgView.isUserInteractionEnabled = true
         
 
-        imgView.frame = CGRect(x: 100, y: 100, width: Int(view.width/3), height: Int(view.height/5))
+        imgView.frame = CGRect(x: 100, y: 100, width: Int(view.frame.width/3), height: Int(view.frame.height/5))
         imgView.alpha = 0.75
         
         imgView.addGestureRecognizer(tap)
         imgView2.addGestureRecognizer(tap2)
         
-        view.layout(imgView).top(view.height/7 * 4.8).left(view.width/7).width(view.width/5.5).height(view.height/5.5)
+        view.layout(imgView).top(view.frame.height/7 * 4.8).left(view.frame.width/7).width(view.frame.width/5.5).height(view.frame.height/5.5)
         
 
-        imgView2.frame = CGRect(x: 100, y: 100, width: Int(view.width/3), height: Int(view.height/5))
+        imgView2.frame = CGRect(x: 100, y: 100, width: Int(view.frame.width/3), height: Int(view.frame.height/5))
         imgView2.alpha = 0.75
         
-        view.layout(imgView2).top(view.height/7 * 4.8).right(view.width/7).width(view.width/4.5).height(view.height/5)
+        view.layout(imgView2).top(view.frame.height/7 * 4.8).right(view.frame.width/7).width(view.frame.width/4.5).height(view.frame.height/5)
         
       
     }
     
     
     
-    func handleTap1(_ sender: UITapGestureRecognizer) {
+    @objc func handleTap1(_ sender: UITapGestureRecognizer) {
         
         print("tapped")
         UIView.animate(withDuration: 0.5) { 
@@ -130,7 +140,7 @@ class SignUpViewController : UIViewController, TextFieldDelegate
 
     }
     
-    func handleTap2(_ sender: UITapGestureRecognizer) {
+    @objc func handleTap2(_ sender: UITapGestureRecognizer) {
         
         print("tapped")
         UIView.animate(withDuration: 0.5) {
@@ -143,23 +153,24 @@ class SignUpViewController : UIViewController, TextFieldDelegate
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
         
-        if !emailField.text!.isEmpty && !passwordField.text!.isEmpty && !confirmPasswordField.text!.isEmpty && !firstNameField.text!.isEmpty && !lastNameField.text!.isEmpty && gender != "" && !confirmPasswordField.isErrorRevealed && !emailField.isErrorRevealed
+        if !emailField.text!.isEmpty && !passwordField.text!.isEmpty && !confirmPasswordField.text!.isEmpty && !firstNameField.text!.isEmpty && !lastNameField.text!.isEmpty && !confirmPasswordField.isErrorRevealed && !emailField.isErrorRevealed
         {
             print("everything is filled out and no errors")
             
             let newUser = MindfulWasteUser(email: self.emailField.text!, firstName: self.firstNameField.text!, lastName: self.lastNameField.text!, gender: self.gender)
             
-            Auth.auth().createUser(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user:User?, error:Error?) in
+            Auth.auth().createUser(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user, error) in
                 if error == nil
                 {
-                    Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user: User?, error: Error?) in
+                    Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user, error) in
                         print("worked and signed in")
                         //self.performSegue(withIdentifier: "beginningSegue", sender: nil)
-                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "firstVC") as! ViewController
-                        self.present(vc, animated: true, completion: nil)
+                        
                         let userRef = self.ref.child(self.firstNameField.text! + " " + self.lastNameField.text!)
                         self.defaults.set(self.firstNameField.text! + " " + self.lastNameField.text!, forKey: "user")
                         userRef.setValue(newUser.toAnyObject())
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "firstVC")
+                        self.present(vc!, animated: true, completion: nil)
                         
                     })
 

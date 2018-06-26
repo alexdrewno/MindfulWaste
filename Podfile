@@ -6,7 +6,7 @@ target 'MindfulWaste' do
   use_frameworks!
   pod 'Firebase/Core'
   pod 'SideMenuController'
-  pod 'Charts/Realm'
+  pod 'ChartsRealm'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'FoldingCell'

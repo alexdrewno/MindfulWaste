@@ -1,6 +1,7 @@
 import UIKit
 import Material
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginMainViewController: UIViewController, TextFieldDelegate
 {
@@ -9,6 +10,7 @@ class LoginMainViewController: UIViewController, TextFieldDelegate
     
     /// A constant to layout the textFields.
     fileprivate let constant: CGFloat = 32
+    let defaults = UserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +41,7 @@ class LoginMainViewController: UIViewController, TextFieldDelegate
 //        let leftView = UIImageView()
 //        //leftView.image = Icon.cm.audio
 //        emailField.leftView = leftView
-        
-        view.layout(emailField).center(offsetY: -passwordField.height - 40).left(20).right(20)
+        view.layout(emailField).center(offsetY: -passwordField.frame.height - 40).left(20).right(20)
     }
     
     fileprivate func preparePasswordField() {
@@ -59,13 +60,19 @@ class LoginMainViewController: UIViewController, TextFieldDelegate
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         
-        Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user: User?, error: Error?) in
+        Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user, error) in
             if error == nil
             {
-                Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user: User?, error: Error?) in
+    
+                Auth.auth().signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user, error) in
                     //self.performSegue(withIdentifier: "beginningSegue2", sender: nil)
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "firstVC") as! ViewController
-                    self.present(vc, animated: true, completion: nil)
+                    //let vc = self.storyboard?.instantiateViewController(withIdentifier: "firstVC") as! ViewController
+                    
+            
+                    
+                    
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "firstVC")
+                    self.present(vc!, animated: true, completion: nil)
                 })
             }
             else

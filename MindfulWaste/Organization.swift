@@ -9,12 +9,13 @@ class Organization: NSObject
     var description2 = ""
     var usersInOrganization = [String]()
     
-    init(c: String, dc: String, name: String, d: String)
+    init(c: String, dc: String, name: String, d: String, usersInOrg: [String])
     {
         creator = c
         dateCreated = dc
         orgName = name
         description2 = d
+        usersInOrganization = usersInOrg
     }
     
     func toAnyObject() -> Any

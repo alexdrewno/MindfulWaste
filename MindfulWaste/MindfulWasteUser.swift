@@ -26,6 +26,10 @@ class MindfulWasteUser : NSObject
         {
             self.organizations = organization!
         }
+        else
+        {
+            self.organizations = [""]
+        }
     }
     
     func toAnyObject() -> Any

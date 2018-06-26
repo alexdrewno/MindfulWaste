@@ -33,12 +33,19 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .singleLine
-        personName.text! = self.defaults.value(forKey: "user") as! String
+        if let name = self.defaults.value(forKey: "user") as? String
+        {
+            personName.text! = name
+        }
+        else
+        {
+            personName.text! = "Person Name"
+        }
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,14 +54,21 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
         
         switch indexPath.row{
             case 0:
+                cell.cellLabel.text = "Home"
+                cell.imageIcon.image = UIImage(named: "homeIcon")
+            case 1:
                 cell.cellLabel.text = "New Report"
                 cell.imageIcon.image = UIImage(named: "newreporticon")
-            case 1:
+            case 2:
                 cell.cellLabel.text = "My Reports"
                 cell.imageIcon.image = UIImage(named: "singleusericon")
-            case 2:
+            case 3:
+                cell.cellLabel.text! = "My Organizations"
+                cell.imageIcon.image = UIImage(named: "buildingimg")
+            case 4:
                 cell.cellLabel.text = "Organization(s)"
                 cell.imageIcon.image = UIImage(named: "multiusericon")
+            
             default:
                 break
             
@@ -65,10 +79,18 @@ class SideMenuViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row
         {
-            case 0:
-                sideMenuController?.performSegue(withIdentifier: "newReport", sender: nil)
-            default:
-                break
+        case 0:
+            sideMenuController?.performSegue(withIdentifier: "showCenterController1", sender: nil)
+        case 1:
+            sideMenuController?.performSegue(withIdentifier: "newReport", sender: nil)
+        case 2:
+            sideMenuController?.performSegue(withIdentifier: "organizationViewController", sender: nil)
+        case 3:
+            sideMenuController?.performSegue(withIdentifier: "myOrganizationsSegue", sender: nil)
+        case 4:
+            sideMenuController?.performSegue(withIdentifier: "showAllOrgs", sender: nil)
+        default:
+            break
         }
     }
 }

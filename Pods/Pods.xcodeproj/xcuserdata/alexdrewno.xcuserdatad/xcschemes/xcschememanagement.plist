@@ -9,6 +9,26 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ChartsRealm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FirebaseAuth.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FirebaseCore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FirebaseDatabase.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FoldingCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -40,6 +60,11 @@
 			<false/>
 		</dict>
 		<key>Material.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Motion.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -79,84 +104,18 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>leveldb-library.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>nanopb.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>0AF14CF024A5339E88854C756D8954F8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>24712DEB79F57D28F03EA1359679BACF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>322428ECC8C5EC71F14C92233787C7AC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>39AA3FC7447AC6B6A131668CFF9C01CD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3A5897FCD2621886E495618AB901B1EF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4C67514EA7D98658F641516ED8328206</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>685614DC76DA52AF800D3319B5736895</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>699364E9658D24FF319736159FDC959C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8D511562A8961C5B7A5DD87BAE2374F2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9FD020AB876E42FB7B2983B312D0C625</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B626E472969D6F87698AF0041EAAFC38</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DC7FB60F6AD6062F2C7CAD69199974D9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E8D69BD341FA4A538C903083DE5BCE85</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

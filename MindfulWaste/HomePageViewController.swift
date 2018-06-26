@@ -102,7 +102,7 @@ class HomePageViewController : UIViewController
         chartDataSet.colors = setColors
         pieChart.chartDescription?.text! = ""
 
-        let centerText = NSAttributedString(string: "\(amount)", attributes: [ NSFontAttributeName: UIFont(name: "Futura", size: 36)! ])
+        let centerText = NSAttributedString(string: "\(amount)", attributes: [ kCTFontAttributeName as NSAttributedStringKey: UIFont(name: "Futura", size: 36)! ])
         pieChart.centerAttributedText = centerText
         pieChart.data = chartData
     }

@@ -35,6 +35,10 @@
 		3FF422E21DF7853E001D2874 /* MindfulWasteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422E11DF7853E001D2874 /* MindfulWasteTests.swift */; };
 		3FF422ED1DF7853E001D2874 /* MindfulWasteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF422EC1DF7853E001D2874 /* MindfulWasteUITests.swift */; };
 		3FF772211E32811000F2B6E0 /* DetailedReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF772201E32811000F2B6E0 /* DetailedReportCell.swift */; };
+		9524FDAF1EFB860900691BCF /* OrganizationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524FDAE1EFB860900691BCF /* OrganizationDetailViewController.swift */; };
+		9524FDB11EFB95A700691BCF /* OrganizationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524FDB01EFB95A700691BCF /* OrganizationsTableViewController.swift */; };
+		9524FDB31EFC27A200691BCF /* OrganizationSingleReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524FDB21EFC27A200691BCF /* OrganizationSingleReportCell.swift */; };
+		9524FDB51EFC2E9600691BCF /* OrgDetailReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524FDB41EFC2E9600691BCF /* OrgDetailReportVC.swift */; };
 		9535CDFD1E6D07C500F30BB1 /* ReportInfographic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535CDFC1E6D07C500F30BB1 /* ReportInfographic.swift */; };
 		953B2AAE1E05EA3400649F55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */; };
 		953B2AAF1E05EA3400649F55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */; };
@@ -108,6 +112,10 @@
 		40F16CB367FFF2D958C24AAE /* Pods_MindfulWaste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindfulWaste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		485471B5AE89AD167B65516F /* Pods-MindfulWasteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWasteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWasteUITests/Pods-MindfulWasteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		86BC002B4748BBB436553EB1 /* Pods-MindfulWaste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindfulWaste.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste.release.xcconfig"; sourceTree = "<group>"; };
+		9524FDAE1EFB860900691BCF /* OrganizationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationDetailViewController.swift; sourceTree = "<group>"; };
+		9524FDB01EFB95A700691BCF /* OrganizationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsTableViewController.swift; sourceTree = "<group>"; };
+		9524FDB21EFC27A200691BCF /* OrganizationSingleReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationSingleReportCell.swift; sourceTree = "<group>"; };
+		9524FDB41EFC2E9600691BCF /* OrgDetailReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrgDetailReportVC.swift; sourceTree = "<group>"; };
 		9535CDFC1E6D07C500F30BB1 /* ReportInfographic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportInfographic.swift; sourceTree = "<group>"; };
 		953B2AAD1E05EA3400649F55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9554EB4A1E076B0E00771CC6 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -253,14 +261,18 @@
 		95CC46431ECF459400F9FC1D /* OrganizationFiles */ = {
 			isa = PBXGroup;
 			children = (
+				9524FDAE1EFB860900691BCF /* OrganizationDetailViewController.swift */,
+				9524FDB01EFB95A700691BCF /* OrganizationsTableViewController.swift */,
+				95CC46411ECF455700F9FC1D /* AllOrganizationViewController.swift */,
 				95BD5DF81EFB435000259308 /* NewOrganizationViewController.swift */,
 				95BD5DFA1EFB488700259308 /* Organization.swift */,
-				95CC46411ECF455700F9FC1D /* AllOrganizationViewController.swift */,
 				3F58942A1ECC892B00A871D8 /* OrganizationReportCell.swift */,
 				3F58942E1ECC929E00A871D8 /* OrganizationViewController.swift */,
 				3F5894301ECDDDB200A871D8 /* OrganizationDetailTableViewController.swift */,
 				3F58942C1ECC89C000A871D8 /* OrganizationReportCell.xib */,
 				95BD5DFC1EFB5AC500259308 /* OrganizationNameCell.swift */,
+				9524FDB21EFC27A200691BCF /* OrganizationSingleReportCell.swift */,
+				9524FDB41EFC2E9600691BCF /* OrgDetailReportVC.swift */,
 			);
 			name = OrganizationFiles;
 			sourceTree = "<group>";
@@ -308,7 +320,6 @@
 				3FF422C61DF7853D001D2874 /* Frameworks */,
 				3FF422C71DF7853D001D2874 /* Resources */,
 				21AEA06AC73E1AAA2587821C /* [CP] Embed Pods Frameworks */,
-				4E7142FE4A13F6CBF107B4AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -327,8 +338,6 @@
 				3FF422D91DF7853E001D2874 /* Sources */,
 				3FF422DA1DF7853E001D2874 /* Frameworks */,
 				3FF422DB1DF7853E001D2874 /* Resources */,
-				BC95B8468A0080E829AE3E96 /* [CP] Embed Pods Frameworks */,
-				29D7BCFB0BE034EAFC0CA9EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -348,8 +357,6 @@
 				3FF422E41DF7853E001D2874 /* Sources */,
 				3FF422E51DF7853E001D2874 /* Frameworks */,
 				3FF422E61DF7853E001D2874 /* Resources */,
-				0246865FA8B570A28C26190A /* [CP] Copy Pods Resources */,
-				F6F60807FCE9A576737F1D8E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -448,64 +455,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0246865FA8B570A28C26190A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWasteUITests/Pods-MindfulWasteUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		21AEA06AC73E1AAA2587821C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/ChartsRealm/ChartsRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/KDCircularProgress/KDCircularProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenuController/SideMenuController.framework",
+				"${BUILT_PRODUCTS_DIR}/expanding-collection/expanding_collection.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChartsRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KDCircularProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/expanding_collection.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		29D7BCFB0BE034EAFC0CA9EA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWasteTests/Pods-MindfulWasteTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4E7142FE4A13F6CBF107B4AC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWaste/Pods-MindfulWaste-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7FE418110E6227DEC858DC89 /* [CP] Check Pods Manifest.lock */ = {
@@ -514,13 +505,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MindfulWaste-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A39D49BFA6F424A33FA3335C /* [CP] Check Pods Manifest.lock */ = {
@@ -529,28 +523,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MindfulWasteTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BC95B8468A0080E829AE3E96 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWasteTests/Pods-MindfulWasteTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F16D9988494901752E8BCD6A /* [CP] Check Pods Manifest.lock */ = {
@@ -559,28 +541,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MindfulWasteUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F6F60807FCE9A576737F1D8E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindfulWasteUITests/Pods-MindfulWasteUITests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -598,6 +568,7 @@
 				3FE5EAAD1E608F040004A77C /* LiveFeedViewController.swift in Sources */,
 				3F3295B51DFEFF1400612904 /* CustomUserCell.swift in Sources */,
 				3F5CDA8D1EC20743004D1668 /* HomeViewController.swift in Sources */,
+				9524FDAF1EFB860900691BCF /* OrganizationDetailViewController.swift in Sources */,
 				9535CDFD1E6D07C500F30BB1 /* ReportInfographic.swift in Sources */,
 				3F6E7E221DFB06F400421F54 /* HomePageViewController.swift in Sources */,
 				3F54E1C71EB0D8C700ACBDC2 /* SignUpViewController.swift in Sources */,
@@ -605,6 +576,7 @@
 				3FF422CF1DF7853E001D2874 /* ViewController.swift in Sources */,
 				3F7DB19D1EAE2701009D5198 /* SideMenuCell.swift in Sources */,
 				95BD5DFD1EFB5AC500259308 /* OrganizationNameCell.swift in Sources */,
+				9524FDB31EFC27A200691BCF /* OrganizationSingleReportCell.swift in Sources */,
 				956F3A4F1E077A0E006EDE6A /* CustomCollectionCell.swift in Sources */,
 				956F3A511E078F4E006EDE6A /* Report.swift in Sources */,
 				3F643A791E6DA469005B44C1 /* FeedTableViewCell.swift in Sources */,
@@ -615,8 +587,10 @@
 				3F62A90E1EB387690007D924 /* IntroViewController.swift in Sources */,
 				9554EB4B1E076B0E00771CC6 /* ReportViewController.swift in Sources */,
 				3F644A981EA7A842000796E8 /* SideMenuViewController.swift in Sources */,
+				9524FDB51EFC2E9600691BCF /* OrgDetailReportVC.swift in Sources */,
 				95BD5DF91EFB435000259308 /* NewOrganizationViewController.swift in Sources */,
 				3F67B0B21E291304004819B7 /* ReportCell.swift in Sources */,
+				9524FDB11EFB95A700691BCF /* OrganizationsTableViewController.swift in Sources */,
 				3F58942F1ECC929E00A871D8 /* OrganizationViewController.swift in Sources */,
 				3F7DB19F1EAF9661009D5198 /* LoginMainViewController.swift in Sources */,
 			);
@@ -720,6 +694,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -763,6 +738,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -780,7 +756,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.MindfulWaste.09204;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -796,7 +773,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = adrewno1.MindfulWaste.09204;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
